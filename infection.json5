@@ -1,0 +1,44 @@
+{
+    "$schema": "vendor/infection/infection/resources/schema.json",
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "logs": {
+        "text": "infection.log"
+    },
+    "mutators": {
+        "@default": true,
+        // Sport codes are ASCII, so mb_strtolower and strtolower are
+        // indistinguishable here -- no test can kill this mutant.
+        "MBString": {
+            "ignoreSourceCodeByRegex": [
+                ".*mb_strtolower\\(\\$this->value\\).*"
+            ]
+        },
+        // These two casts exist to make the declared PHPStan array-key types
+        // truthful, not to change behaviour: PHP coerces a numeric string key
+        // to int on its own, and casting a string to string is a no-op. Both
+        // mutants are therefore unkillable by construction.
+        "CastInt": {
+            "ignore": ["Fantasy\\Sdk\\Data\\PlayerComparison::readRankings"]
+        },
+        "CastString": {
+            "ignore": ["Fantasy\\Sdk\\Data\\PlayerComparison::readRankings"]
+        },
+        // Same story: the (float) cast on an already-numeric value is there so
+        // PHPStan sees a float returned from a ?float method. PHP widens int to
+        // float via the return type on its own, even under strict_types, so
+        // dropping the cast is unobservable and no test can kill the mutant.
+        "CastFloat": {
+            "ignore": ["Fantasy\\Sdk\\Data\\Payload::nullableFloat"]
+        }
+    },
+    "timeout": 5,
+    "threads": "max",
+    // Currently at 100% with three documented mutator exclusions. 95 leaves a
+    // little headroom for genuinely harmless mutants in new endpoint code
+    // without letting a real gap slide through.
+    "minMsi": 95
+}

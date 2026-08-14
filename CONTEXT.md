@@ -9,7 +9,7 @@ lineups.
 
 Two deliverables, built in order:
 
-1. **SDK** (`src/Sdk`, namespace `Fantasy\Sdk`) — a [Saloon v3](https://docs.saloon.dev)
+1. **SDK** (`src/Sdk`, namespace `Fantasy\Sdk`) — a [Saloon v4](https://docs.saloon.dev)
    based client wrapping the FantasyPros API described in
    `docs/fantasypros-open-api-spec-v2.yml`.
 2. **MCP server** (`src/Mcp`, namespace `Fantasy\Mcp`) — built on the official
@@ -24,15 +24,17 @@ so path repositories, split composer.json files, and cross-package versioning ad
 ceremony with no payoff. The namespace boundary (`Fantasy\Sdk` must never depend on
 `Fantasy\Mcp`; the MCP layer only consumes the SDK's public surface) gives us the same
 separation, and extracting `src/Sdk` into its own package later is mechanical if it ever
-needs to be published independently. The empty `apps/` and `packages/` directories are
-vestigial and can be deleted.
+needs to be published independently. The boundary is enforced mechanically by Deptrac
+(`deptrac.php`): the `mcp` layer may access `sdk`, and `sdk` may access nothing. The
+vestigial `apps/` and `packages/` directories have been deleted.
 
 ```
 composer.json         # single package, PSR-4: Fantasy\ => src/
 src/
   Sdk/                # Saloon connector, requests, DTOs, enums
   Mcp/                # MCP server, tools, prompts
-tests/                # Pest tests, Saloon MockClient fixtures
+tests/                # PHPUnit tests + recorded Saloon fixtures
+  Fixtures/Saloon/    # real API payloads, committed, replayed offline
 docs/                 # OpenAPI spec + reference material
 .backlog/             # Backlog.md task tracking (task prefix: FANTASY)
 bin/                  # MCP server entrypoint (later phase)
@@ -71,8 +73,17 @@ bin/                  # MCP server entrypoint (later phase)
   injuries, news items). Fields we don't care about can stay unmapped.
 - Typed exceptions for auth failures (401/403), validation errors (400 returns
   `{message, parameter, valid_format}`), and rate limiting.
-- Tests use Pest + Saloon's `MockClient` with JSON fixtures shaped by the spec examples —
-  no live API calls in the test suite.
+- Tests use PHPUnit + Saloon's `MockClient` against **recorded** fixtures. The same tests
+  run in two modes, selected by `FANTASY_FIXTURES`:
+  - `composer test` (default) — fully offline. `MockConfig::throwOnMissingFixtures()` means
+    a missing fixture is a hard failure, never a silent call to the live API.
+  - `composer test:record` — loads `.env`, requires a real `FANTASYPROS_API_KEY`, and lets
+    Saloon record any missing fixture from the live API. `composer fixtures:refresh` wipes
+    and re-records everything.
+  Fixtures are committed, so the offline suite exercises real payload shapes rather than
+  hand-written guesses at the spec examples. A recorded fixture stores only the response
+  status, headers, and body — Saloon never writes request headers, so the API key cannot
+  leak into one.
 
 ## MCP design (second phase, tickets filed but not yet planned in detail)
 
@@ -84,8 +95,12 @@ bin/                  # MCP server entrypoint (later phase)
 
 ## Conventions
 
-- PHP 8.3+, strict types everywhere.
-- Tooling: Pest (tests), PHPStan (max level as practical), Laravel Pint (style), driven
-  by composer scripts (`composer test`, `composer lint`, `composer analyse`).
+- PHP 8.5, strict types everywhere.
+- Tests declare themselves with the `#[Test]` attribute, not a `test_` method prefix.
+  Method names read as sentences: `it_authenticates_with_the_api_key_header()`.
+- Tooling, all driven by composer scripts: PHPUnit (`test`, `test:record`), Infection
+  mutation testing (`test:mutate`, `minMsi` in `infection.json5`), PHPStan at `level: max`
+  with 100% type coverage (`lint`), Laravel Pint (`fmt`), Rector (`refactor`), Deptrac for
+  the Sdk/Mcp boundary.
 - Work is tracked in Backlog.md (`.backlog/` directory, MCP or `backlog` CLI). File a
   task before starting a chunk of work; keep acceptance criteria testable.

@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "641",
+        "Connection": "keep-alive",
+        "Date": "Fri, 14 Aug 2026 18:13:25 GMT",
+        "x-amzn-Remapped-Date": "Fri, 14 Aug 2026 18:13:25 GMT",
+        "x-amzn-RequestId": "1bed8dee-af20-458e-a0bd-0b7a7fda9c70",
+        "Access-Control-Allow-Origin": "https:\/\/www.fantasypros.com",
+        "x-amzn-Remapped-Content-Length": "641",
+        "x-amzn-Remapped-Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Via": "1.1 9303a77b6c0a575ddbf90c7cf3783e66.cloudfront.net (CloudFront), 1.1 6f6a165c08693865e338cdda8c008806.cloudfront.net (CloudFront)",
+        "x-amz-apigw-id": "CGse6HtJIAMEFVw=",
+        "Cache-Control": "max-age=1800, must-revalidate",
+        "x-amzn-Remapped-Server": "Apache\/2.4.52 (Ubuntu)",
+        "X-Amz-Cf-Pop": [
+            "IAD89-P4",
+            "SFO53-P12"
+        ],
+        "Vary": "Accept-Encoding,Origin",
+        "X-Cache": "Miss from cloudfront",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "leceDXt3wRegnoDv9_2jI2JjoDAMEaCKjrz91evDRELKyy-cAEgdAQ=="
+    },
+    "data": "{\"sport\":\"NFL\",\"count\":1,\"season\":\"2026\",\"week\":\"0\",\"players\":[{\"player_id\":17240,\"player_name\":\"Saquon Barkley\",\"short_name\":\"S. Barkley\",\"first_name\":\"Saquon\",\"last_name\":\"Barkley\",\"reverse_name\":\"Barkley, Saquon\",\"position_id\":\"RB\",\"positions\":[\"RB\"],\"team_id\":\"PHI\",\"filename\":\"https:\\\/\\\/www.fantasypros.com\\\/nfl\\\/players\\\/saquon-barkley.php\",\"sportsdata_player_id\":\"9811b753-347c-467a-b3cb-85937e71e2b9\",\"rank_ecr\":16,\"rank_adp\":14,\"rank_ecr_pos\":0,\"rank_ecr_ppr\":26,\"rank_adp_ppr\":14,\"rank_ecr_half\":16,\"birthdate\":\"1997-02-09\",\"birthdatetime\":855446400,\"age\":29,\"draft_class\":2018}],\"limit\":10,\"public_api_limited\":true,\"tier\":\"free\"}",
+    "context": []
+}

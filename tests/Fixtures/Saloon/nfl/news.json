@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "3135",
+        "Connection": "keep-alive",
+        "Date": "Fri, 14 Aug 2026 19:41:46 GMT",
+        "x-amzn-Remapped-Date": "Fri, 14 Aug 2026 19:41:46 GMT",
+        "x-amzn-RequestId": "6fa13d4f-7ce0-46c4-9171-2cb230c374ac",
+        "Access-Control-Allow-Origin": "https:\/\/www.fantasypros.com",
+        "x-amzn-Remapped-Content-Length": "3135",
+        "x-amzn-Remapped-Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Via": "1.1 a7d1e0c928cf48e0d4f62edd164c6b76.cloudfront.net (CloudFront), 1.1 1d0952b39a1f14a100a952bab10a6ade.cloudfront.net (CloudFront)",
+        "x-amz-apigw-id": "CG5bOFzxoAMEEEg=",
+        "Cache-Control": "max-age=600, must-revalidate",
+        "x-amzn-Remapped-Server": "Apache\/2.4.52 (Ubuntu)",
+        "X-Amz-Cf-Pop": [
+            "IAD89-P4",
+            "SFO53-P12"
+        ],
+        "Vary": "Accept-Encoding,Origin",
+        "X-Cache": "Miss from cloudfront",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "1G-F5wl4tFnDBfzaCi1Jx-PAXL2I2dui6eGAIEa6-upT7tIh6iM_Yg=="
+    },
+    "data": "\n{\"sport\":\"NFL\",\"title\":\"Fantasy Player News\",\"description\":\"Breaking Fantasy Football player news along with the impact for fantasy managers\",\"count\":5,\"items\":[{\"id\":602359,\"created\":\"2026-08-14 19:37:04\",\"created_formated\":\"Fri, Aug 14th 7:37pm UTC\",\"author\":\"Ari Koslow\",\"player_id\":18269,\"team_id\":\"GB\",\"title\":\"Josh Jacobs (groin) could return next week\",\"sport_id\":\"NFL\",\"categories\":[\"Commentary\",\"News\",\"Injury\"],\"link\":\"https:\\\/\\\/www.fantasypros.com\\\/nfl\\\/news\\\/602359\\\/josh-jacobs-groin-could-return-next-week.php\",\"desc\":\"Packers coach Matt LaFleur said Josh Jacobs could return to practice next week. \",\"impact\":\"LaFleur clarified that it wouldn't be till later in the week. Jacobs has been absent from practice due to a groin injury. \"},{\"id\":602358,\"created\":\"2026-08-14 19:35:00\",\"created_formated\":\"Fri, Aug 14th 7:35pm UTC\",\"author\":\"Ari Koslow\",\"player_id\":24582,\"team_id\":\"TEN\",\"title\":\"Nazeeh Johnson suspended six games by NFL\",\"sport_id\":\"NFL\",\"categories\":[\"Commentary\",\"News\"],\"link\":\"https:\\\/\\\/www.fantasypros.com\\\/nfl\\\/news\\\/602358\\\/nazeeh-johnson-suspended-six-games-by-nfl.php\",\"desc\":\"The NFL has suspended Titans CB Nazeeh Johnson six regular season games for performance-enhancing substance policy violation. \",\"impact\":\"Johnson can still participate in all preseason activities. He will be eligible for reinstatement on October 19.\"},{\"id\":602356,\"created\":\"2026-08-14 19:31:44\",\"created_formated\":\"Fri, Aug 14th 7:31pm UTC\",\"author\":\"Ari Koslow\",\"player_id\":17315,\"team_id\":\"WAS\",\"title\":\"Dorance Armstrong Jr. suspended for the season opener\",\"sport_id\":\"NFL\",\"categories\":[\"Commentary\",\"News\"],\"link\":\"https:\\\/\\\/www.fantasypros.com\\\/nfl\\\/news\\\/602356\\\/dorance-armstrong-jr-suspended-season-opener.php\",\"desc\":\"The NFL has suspended DE Dorance Armstrong Jr. for the season opener. \",\"impact\":\"Armstrong is still eligible to participate in all preseason activities. He'll be eligible for reinstatement on September 14. \"},{\"id\":602355,\"created\":\"2026-08-14 19:29:22\",\"created_formated\":\"Fri, Aug 14th 7:29pm UTC\",\"author\":\"Ari Koslow\",\"player_id\":23735,\"team_id\":\"BUF\",\"title\":\"Phidarian Mathis suspended three games \",\"sport_id\":\"NFL\",\"categories\":[\"Commentary\",\"News\"],\"link\":\"https:\\\/\\\/www.fantasypros.com\\\/nfl\\\/news\\\/602355\\\/phidarian-mathis-suspended-three-games.php\",\"desc\":\"Bills DT Phidarian Mathis has been suspended for three games for violating the NFL's Substances of Abuse Policy. \",\"impact\":\"Mathis is still eligible to participate in preseason practices and games. He'll be eligible to return September 28. \"},{\"id\":602354,\"created\":\"2026-08-14 19:26:57\",\"created_formated\":\"Fri, Aug 14th 7:26pm UTC\",\"author\":\"Ari Koslow\",\"player_id\":27605,\"team_id\":\"PHI\",\"title\":\"Brandon George signs with Eagles \",\"sport_id\":\"NFL\",\"categories\":[\"Commentary\",\"News\"],\"link\":\"https:\\\/\\\/www.fantasypros.com\\\/nfl\\\/news\\\/602354\\\/brandon-george-signs-with-eagles.php\",\"desc\":\"The Eagles signed LB Brandon George. \",\"impact\":\"George spent last season on injured reserve with the Chiefs. He will compete for a depth role in the Eagles linebacker room. \"}],\"limit\":10,\"public_api_limited\":true,\"tier\":\"free\"}",
+    "context": []
+}

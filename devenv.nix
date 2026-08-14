@@ -13,6 +13,9 @@ let
         "start"
       ];
     };
+    fantasypros = {
+      url = "https://api.fantasypros.com/mcp";
+    };
   };
 
   claudeMcpServers = builtins.mapAttrs (

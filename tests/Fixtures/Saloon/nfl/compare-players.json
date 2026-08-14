@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "2007",
+        "Connection": "keep-alive",
+        "Date": "Fri, 14 Aug 2026 18:14:13 GMT",
+        "x-amzn-Remapped-Date": "Fri, 14 Aug 2026 18:14:13 GMT",
+        "x-amzn-RequestId": "55345d14-9c59-4a77-a526-a40a1246a62b",
+        "Access-Control-Allow-Origin": "https:\/\/www.fantasypros.com",
+        "x-amzn-Remapped-Content-Length": "2007",
+        "x-amzn-Remapped-Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Via": "1.1 3ae11a9b839883207a82a478aa43a33a.cloudfront.net (CloudFront), 1.1 7d48ee31cb5070a4217791c0bd4eb32c.cloudfront.net (CloudFront)",
+        "x-amz-apigw-id": "CGsmdGNDIAMEYFQ=",
+        "Cache-Control": "max-age=600, must-revalidate",
+        "x-amzn-Remapped-Server": "Apache\/2.4.52 (Ubuntu)",
+        "X-Amz-Cf-Pop": [
+            "IAD89-P4",
+            "SFO53-P12"
+        ],
+        "Vary": "Accept-Encoding,Origin",
+        "X-Cache": "Miss from cloudfront",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "A2K6NXXZSIzEqnE4CptfpBPpaZ7tHQYQRtTI_ZOpOwSRxp99J_NoHQ=="
+    },
+    "data": "{\"sport\":\"NFL\",\"year\":\"2026\",\"week\":\"0\",\"position_id\":\"RB\",\"ranking_type\":\"draft\",\"rankings\":{\"STD\":{\"23133\":[{\"expert_id\":\"1091\",\"rank\":\"1\"},{\"expert_id\":\"2791\",\"rank\":\"1\"},{\"expert_id\":\"_0\",\"rank\":\"2\"}],\"17240\":[{\"expert_id\":\"1091\",\"rank\":\"7\"},{\"expert_id\":\"2791\",\"rank\":\"6\"},{\"expert_id\":\"_0\",\"rank\":\"7\"}]},\"PPR\":{\"23133\":[{\"expert_id\":\"1091\",\"rank\":\"1\"},{\"expert_id\":\"2791\",\"rank\":\"1\"},{\"expert_id\":\"_0\",\"rank\":\"2\"}],\"17240\":[{\"expert_id\":\"1091\",\"rank\":\"11\"},{\"expert_id\":\"2791\",\"rank\":\"8\"},{\"expert_id\":\"_0\",\"rank\":\"10\"}]},\"HALF\":{\"23133\":[{\"expert_id\":\"1091\",\"rank\":\"1\"},{\"expert_id\":\"2791\",\"rank\":\"1\"},{\"expert_id\":\"_0\",\"rank\":\"2\"}],\"17240\":[{\"expert_id\":\"1091\",\"rank\":\"9\"},{\"expert_id\":\"2791\",\"rank\":\"8\"},{\"expert_id\":\"_0\",\"rank\":\"8\"}]}},\"players\":{\"17240\":{\"player_name\":\"Saquon Barkley\",\"player_team_id\":\"PHI\",\"player_position_id\":\"RB\",\"player_page_url\":\"http:\\\/\\\/www.fantasypros.com\\\/nfl\\\/players\\\/saquon-barkley.php\"},\"23133\":{\"player_name\":\"Bijan Robinson\",\"player_team_id\":\"ATL\",\"player_position_id\":\"RB\",\"player_page_url\":\"http:\\\/\\\/www.fantasypros.com\\\/nfl\\\/players\\\/bijan-robinson.php\"}},\"experts\":{\"2791\":{\"expert_name\":\"Frank Ammirante\",\"expert_display_name\":\"Frank Ammirante - OTC Fantasy\",\"expert_twitter_url\":\"https:\\\/\\\/twitter.com\\\/FAmmiranteTFJ\",\"expert_source_id\":\"765\",\"expert_source_name\":\"OTC Fantasy\",\"expert_source_url\":\"https:\\\/\\\/otcffb.com\\\/\",\"ranks\":[\"STD\",\"PPR\",\"HALF\"]},\"1091\":{\"expert_name\":\"Michael Hauff\",\"expert_display_name\":\"Michael Hauff - FF Faceoff\",\"expert_twitter_url\":\"https:\\\/\\\/twitter.com\\\/TheFFRealist\",\"expert_source_id\":\"1072\",\"expert_source_name\":\"FF Faceoff\",\"expert_source_url\":\"https:\\\/\\\/fffaceoff.com\\\/\",\"ranks\":[\"STD\",\"PPR\",\"HALF\"]},\"_0\":{\"expert_name\":\"FantasyPros\",\"expert_display_name\":\"FantasyPros ECR\\u2122\",\"expert_twitter_url\":\"https:\\\/\\\/twitter.com\\\/fantasypros\",\"expert_source_id\":\"\",\"expert_source_name\":\"FantasyPros\",\"expert_source_url\":\"http:\\\/\\\/www.fantasypros.com\",\"ranks\":[\"STD\",\"PPR\",\"HALF\"]}},\"public_api_limited\":true,\"tier\":\"free\"}",
+    "context": []
+}
