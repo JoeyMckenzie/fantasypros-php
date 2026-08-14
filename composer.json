@@ -1,0 +1,46 @@
+{
+  "name": "fantasy/fantasy",
+  "description": "My fantasy football headquarters.",
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Joey McKenzie",
+      "email": "joey.mckenzie27@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.5"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.52",
+    "laravel/pint": "^1.30",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^2.2",
+    "phpstan/phpstan-phpunit": "^2.0",
+    "phpstan/phpstan-strict-rules": "^2.0",
+    "rector/rector": "^2.6",
+    "tomasvotruba/type-coverage": "^2.3",
+    "phpunit/phpunit": "^13.3"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Fantasy\\Fantasy\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "scripts": {
+    "fmt": "pint --parallel",
+    "fmt:check": "pint --parallel --test",
+    "lint": "phpstan analyze --memory-limit=2G",
+    "refactor": "rector process",
+    "refactor:check": "rector process --dry-run",
+    "test": "phpunit"
+  }
+}
