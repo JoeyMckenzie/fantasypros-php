@@ -5,13 +5,14 @@ status: In Progress
 assignee:
   - '@claude'
 created_date: '2026-08-14 21:38'
-updated_date: '2026-08-14 22:11'
+updated_date: '2026-08-14 22:18'
 labels:
   - sdk
   - release
 dependencies:
   - FANTASY-12
   - FANTASY-8
+  - FANTASY-14
 priority: medium
 ordinal: 13000
 ---
@@ -32,13 +33,13 @@ Usage documentation is deliberately not in scope here -- FANTASY-8 covers the RE
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 A LICENSE file exists and matches the license composer.json declares
-- [ ] #2 The minimum supported PHP version is chosen and consistent across composer.json, rector.php and the CI matrix
+- [x] #1 A LICENSE file exists and matches the license composer.json declares
+- [x] #2 The minimum supported PHP version is chosen and consistent across composer.json, rector.php and the CI matrix
 - [ ] #3 CI runs the full gate (test, fmt:check, refactor:check, lint, test:mutate) on push and pull request across every supported PHP version
 - [ ] #4 CI passes without any API key, and does not invoke composer test:record
-- [ ] #5 composer.json carries the metadata Packagist displays: description, keywords, homepage and support links
+- [x] #5 composer.json carries the metadata Packagist displays: description, keywords, homepage and support links
 - [ ] #6 The package is registered on Packagist and installable via composer require at a tagged version
-- [ ] #7 The repository states how versions are tagged and what the release process is
+- [x] #7 The repository states how versions are tagged and what the release process is
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -72,3 +73,29 @@ Usage documentation is deliberately not in scope here -- FANTASY-8 covers the RE
 
 `composer validate --strict` clean; the full gate green locally on 8.5; CI green on both 8.4 and 8.5 once pushed; a scratch project can `composer require` the package from a path repository and autoload `FantasyPros\FantasyProsConnector`. Note that CI cannot be proven green from this machine -- it needs a push -- so that AC closes only after the workflow runs.
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+## Done: packaging and release readiness
+
+- **`LICENSE`** -- MIT, matching the declaration composer.json already carried with nothing behind it.
+- **PHP floor set to `^8.4`**, per the maintainer: most consumers will be on 8.4+, and supporting 8.3 is not worth constraining the dev toolchain. `rector.php` retargeted from the php85 set to php84 so Rector cannot rewrite code into syntax an 8.4 consumer would reject. Re-running `composer refactor` changed nothing, confirming the codebase was never using 8.5-only syntax.
+- **Packagist metadata** -- keywords, homepage and support links. The URLs point at `github.com/JoeyMckenzie/fantasy`, the repo's actual remote. Note the mismatch with the package name `joeymckenzie/fantasypros-php`: Packagist does not require them to match, but renaming the repo to `fantasypros-php` would be tidier, and these URLs must be updated if that happens.
+- **`CONTRIBUTING.md`** -- setup, the gate and the order it must run in, the Deptrac layering, the fixture policy (including the standing warning to record and read a fixture before modelling a DTO), and the SemVer/tagging release process. Usage documentation stays with FANTASY-8.
+- **Lock file verified installable on 8.4**: no locked package requires 8.5; the highest floor in the tree is `>=8.4.1` (PHPUnit, symfony/*). So the 8.4 claim is not blocked by the dependency graph.
+
+Gate green throughout: `composer validate --strict` clean, 191 tests, PHPStan level max, Pint, Rector, Deptrac 0 violations.
+
+## Scope moved out: CI now belongs to FANTASY-14
+
+A `shivammathur/setup-php` matrix workflow was written and then **deleted** at the maintainer's direction: CI here should be devenv-driven, matching the pattern in their website repo. That work is now FANTASY-14, and this task depends on it. Nothing exists under `.github/`.
+
+ACs #3 and #4 (CI runs the gate on every supported version; CI needs no API key) are therefore not closable here -- they are FANTASY-14's ACs #1-#4. They are left unchecked rather than marked done, pending either that ticket landing or an explicit amendment to this one.
+
+## Not done: publishing (AC #6)
+
+The maintainer is handling Packagist registration and tagging themselves. Everything up to that point is in place. For the record, the remaining steps are: submit `https://github.com/JoeyMckenzie/fantasy` at packagist.org/packages/submit, add the GitHub service hook so tags sync automatically, then `git tag -a v0.1.0 -m "v0.1.0" && git push origin v0.1.0`.
+
+Worth deciding before the first tag: the endpoint set is incomplete (FANTASY-6 covers projections and player-points, FANTASY-7 typed error handling), so a `0.x` first tag leaves room to change the public surface without a major bump.
+<!-- SECTION:NOTES:END -->
