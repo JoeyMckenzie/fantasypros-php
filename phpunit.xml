@@ -5,14 +5,8 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="Harness">
-            <file>tests/HarnessTest.php</file>
-        </testsuite>
-        <testsuite name="Mcp">
-            <directory>tests/Mcp</directory>
-        </testsuite>
-        <testsuite name="Sdk">
-            <directory>tests/Sdk</directory>
+        <testsuite name="FantasyPros">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
     <source>

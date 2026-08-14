@@ -22,17 +22,24 @@
         // to int on its own, and casting a string to string is a no-op. Both
         // mutants are therefore unkillable by construction.
         "CastInt": {
-            "ignore": ["Fantasy\\Sdk\\Data\\PlayerComparison::readRankings"]
+            "ignore": ["FantasyPros\\Data\\PlayerComparison::readRankings"]
         },
+        // RankedPlayer::readRanks is the same case: objectMap hands back
+        // array-key keys, and the cast makes the declared array<string, ...> key
+        // type honest. The metric keys are ECR, ECR_MIN and friends, which PHP
+        // never coerces to int, so removing the cast changes nothing observable.
         "CastString": {
-            "ignore": ["Fantasy\\Sdk\\Data\\PlayerComparison::readRankings"]
+            "ignore": [
+                "FantasyPros\\Data\\PlayerComparison::readRankings",
+                "FantasyPros\\Data\\RankedPlayer::readRanks",
+            ]
         },
         // Same story: the (float) cast on an already-numeric value is there so
         // PHPStan sees a float returned from a ?float method. PHP widens int to
         // float via the return type on its own, even under strict_types, so
         // dropping the cast is unobservable and no test can kill the mutant.
         "CastFloat": {
-            "ignore": ["Fantasy\\Sdk\\Data\\Payload::nullableFloat"]
+            "ignore": ["FantasyPros\\Data\\Payload::nullableFloat"]
         }
     },
     "timeout": 5,

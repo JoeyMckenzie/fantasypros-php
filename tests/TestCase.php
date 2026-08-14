@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fantasy\Tests;
+namespace FantasyPros\Tests;
 
-use Fantasy\Sdk\FantasyProsConnector;
+use FantasyPros\FantasyProsConnector;
 use Override;
 use PHPUnit\Framework\TestCase as PhpUnitTestCase;
 

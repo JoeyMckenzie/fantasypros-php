@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fantasy\Tests;
+namespace FantasyPros\Tests;
 
 use Composer\Autoload\ClassLoader;
 use PHPUnit\Framework\Attributes\Test;
@@ -98,10 +98,10 @@ final class HarnessTest extends TestCase
 
         $prefixes = $loader->getPrefixesPsr4();
 
-        self::assertArrayHasKey('Fantasy\\', $prefixes);
+        self::assertArrayHasKey('FantasyPros\\', $prefixes);
         self::assertSame(
             [realpath(__DIR__.'/../src')],
-            array_map(realpath(...), $prefixes['Fantasy\\']),
+            array_map(realpath(...), $prefixes['FantasyPros\\']),
         );
     }
 }

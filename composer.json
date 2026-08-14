@@ -1,8 +1,17 @@
 {
-  "name": "fantasy/fantasy",
-  "description": "My fantasy football headquarters.",
+  "name": "joeymckenzie/fantasypros-php",
+  "description": "A PHP client for the FantasyPros API: players, rankings, projections, news and injuries.",
   "license": "MIT",
-  "type": "project",
+  "keywords": [
+    "fantasypros",
+    "fantasy-football",
+    "fantasy-sports",
+    "nfl",
+    "api-client",
+    "saloon"
+  ],
+  "homepage": "https://github.com/JoeyMckenzie/fantasy",
+  "type": "library",
   "authors": [
     {
       "name": "Joey McKenzie",
@@ -10,7 +19,7 @@
     }
   ],
   "require": {
-    "php": "^8.5",
+    "php": "^8.4",
     "saloonphp/saloon": "^4.0"
   },
   "require-dev": {
@@ -29,14 +38,18 @@
     "symfony/yaml": "^8.1"
   },
   "minimum-stability": "stable",
+  "support": {
+    "issues": "https://github.com/JoeyMckenzie/fantasy/issues",
+    "source": "https://github.com/JoeyMckenzie/fantasy"
+  },
   "autoload": {
     "psr-4": {
-      "Fantasy\\": "src/"
+      "FantasyPros\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Fantasy\\Tests\\": "tests/"
+      "FantasyPros\\Tests\\": "tests/"
     }
   },
   "config": {

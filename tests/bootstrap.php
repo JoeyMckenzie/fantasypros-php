@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Dotenv\Dotenv;
-use Fantasy\Tests\FixtureMode;
+use FantasyPros\Tests\FixtureMode;
 use Saloon\MockConfig;
 
 require_once __DIR__.'/../vendor/autoload.php';

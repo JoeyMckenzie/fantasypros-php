@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "3875",
+        "Connection": "keep-alive",
+        "Date": "Fri, 14 Aug 2026 20:20:15 GMT",
+        "x-amzn-Remapped-Date": "Fri, 14 Aug 2026 20:20:15 GMT",
+        "x-amzn-RequestId": "f91b6086-0f8b-421e-bb08-2f08ba2521ea",
+        "Access-Control-Allow-Origin": "https:\/\/www.fantasypros.com",
+        "x-amzn-Remapped-Content-Length": "3875",
+        "x-amzn-Remapped-Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Via": "1.1 1389e3bf8be1906daa8019802b0774c8.cloudfront.net (CloudFront), 1.1 a776897eaea889232915df730b539976.cloudfront.net (CloudFront)",
+        "x-amz-apigw-id": "CG_D9HlAoAMEtFw=",
+        "Cache-Control": "max-age=600, must-revalidate",
+        "x-amzn-Remapped-Server": "Apache\/2.4.52 (Ubuntu)",
+        "X-Amz-Cf-Pop": [
+            "IAD89-P4",
+            "SFO53-P12"
+        ],
+        "Vary": "Accept-Encoding,Origin",
+        "X-Cache": "Miss from cloudfront",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "XlmWrgHufn7tFN281gsCe4a377VbseBhp8lJHWCpLFP3Zx5wNaB6pg=="
+    },
+    "data": "{\"sport\":\"NFL\",\"count\":189,\"season\":\"2025\",\"week\":\"1\",\"accuracy_weekly_season\":\"2025\",\"accuracy_draft_season\":\"2025\",\"accuracy_weekly_last_season\":\"2024\",\"experts\":[{\"expert_id\":6,\"name\":\"Brandon Funston\",\"source\":\"The Athletic\",\"url\":\"https:\\\/\\\/theathletic.com\",\"twitter\":\"BrandonFunston\",\"bio\":\"\",\"accuracy_draft\":{\"ALL\":178,\"QB\":185},\"positions\":{\"QB\":\"2025-09-04 20:02:55\"},\"default\":{\"QB\":true}},{\"expert_id\":7,\"name\":\"Andy Behrens\",\"source\":\"The Deep Shot\",\"url\":\"https:\\\/\\\/www.thedeepshot.com\\\/\",\"twitter\":\"andybehrens\",\"bio\":\"Andy Behrens wrote for Yahoo Sports for over 18 years, providing fantasy football and fantasy baseball coverage. Before joining Yahoo, Andy wrote for ESPN, the Chicago Sports Review and the Chicago Reader. He is the president of the Fantasy Sports Writers Association and also the author of three novels for young readers.  \",\"accuracy_weekly\":{\"QB\":102,\"ALL\":71},\"accuracy_draft\":{\"ALL\":170,\"QB\":145},\"accuracy_weekly_last_season\":{\"QB\":109,\"ALL\":59},\"positions\":{\"QB\":\"2025-09-05 19:25:43\"},\"default\":{\"QB\":true}},{\"expert_id\":8,\"name\":\"Brad Evans\",\"source\":\"Bally Sports\",\"url\":\"https:\\\/\\\/www.ballysports.com\\\/\",\"twitter\":\"NoisyHuevos\",\"bio\":\"\",\"accuracy_draft\":{\"ALL\":175,\"QB\":153},\"positions\":{\"QB\":\"2025-08-31 12:43:17\"},\"default\":{\"QB\":true}},{\"expert_id\":9,\"name\":\"Scott Pianowski\",\"source\":\"Yahoo! Sports\",\"url\":\"https:\\\/\\\/sports.yahoo.com\\\/fantasy\\\/\",\"twitter\":\"scott_pianowski\",\"bio\":\"\",\"accuracy_weekly\":{\"QB\":79,\"ALL\":75},\"accuracy_draft\":{\"ALL\":108,\"QB\":119},\"accuracy_weekly_last_season\":{\"QB\":71,\"ALL\":108},\"positions\":{\"QB\":\"2025-09-07 16:13:07\"},\"default\":{\"QB\":true}},{\"expert_id\":22,\"name\":\"Pat Fitzmaurice\",\"source\":\"FantasyPros\",\"url\":\"https:\\\/\\\/www.fantasypros.com\\\/\",\"twitter\":\"Fitz_FF\",\"bio\":\"Pat Fitzmaurice is the managing editor and a fantasy football analyst at FantasyPros.\",\"accuracy_weekly\":{\"QB\":42,\"ALL\":31},\"accuracy_draft\":{\"ALL\":47,\"QB\":42},\"accuracy_weekly_last_season\":{\"QB\":9,\"ALL\":20},\"positions\":{\"QB\":\"2025-09-07 15:41:10\"},\"default\":{\"QB\":true}},{\"expert_id\":23,\"name\":\"Scott Engel\",\"source\":\"RotoBaller\",\"url\":\"https:\\\/\\\/www.rotoballer.com\\\/\",\"twitter\":\"scotteTheKing\",\"bio\":\"\",\"accuracy_weekly\":{\"QB\":121,\"ALL\":116},\"accuracy_draft\":{\"ALL\":180,\"QB\":78},\"accuracy_weekly_last_season\":{\"QB\":127,\"ALL\":94},\"positions\":{\"QB\":\"2025-09-06 02:55:20\"},\"default\":{\"QB\":true}},{\"expert_id\":58,\"name\":\"Chet Gresham\",\"source\":\"SB Nation\",\"url\":\"https:\\\/\\\/sbnation.com\\\/\",\"twitter\":\"ChetGresham\",\"bio\":\"\",\"accuracy_weekly\":{\"QB\":27,\"ALL\":22},\"accuracy_draft\":{\"ALL\":131,\"QB\":124},\"positions\":{\"QB\":\"2025-09-06 18:45:04\"},\"default\":{\"QB\":true}},{\"expert_id\":65,\"name\":\"Kevin Roberts\",\"source\":\"The DFS Build\",\"url\":\"https:\\\/\\\/dfsbuild.com\\\/\",\"twitter\":\"BreakingKevin\",\"bio\":\" \",\"accuracy_draft\":{\"ALL\":68,\"QB\":116},\"positions\":{\"QB\":\"2025-09-04 15:44:45\"},\"default\":{\"QB\":true}},{\"expert_id\":87,\"name\":\"Mike Harmon\",\"source\":\"Swollen Dome\",\"url\":\"http:\\\/\\\/swollendome.com\\\/\",\"twitter\":\"swollendome\",\"bio\":\"\",\"accuracy_weekly\":{\"QB\":126,\"ALL\":135},\"accuracy_draft\":{\"ALL\":86,\"QB\":22},\"accuracy_weekly_last_season\":{\"QB\":120,\"ALL\":117},\"positions\":{\"QB\":\"2025-09-04 23:23:16\"},\"default\":{\"QB\":true}},{\"expert_id\":93,\"name\":\"Jared Smola\",\"source\":\"Draft Sharks\",\"url\":\"http:\\\/\\\/draftsharks.com\\\/\",\"twitter\":\"SmolaDS\",\"bio\":\"Jared has been with Draft Sharks since 2007, helping the site capture numerous expert league titles and accuracy awards.  He got his start in fantasy football at the tender age of 9, winning a championship on the legs of Barry Sanders.  Jared is known as \\\"Rain Man\\\" around the Draft Sharks office for his tight-knit relationship with projections.\",\"accuracy_weekly\":{\"QB\":24,\"ALL\":15},\"accuracy_draft\":{\"ALL\":18,\"QB\":50},\"accuracy_weekly_last_season\":{\"QB\":39,\"ALL\":27},\"positions\":{\"QB\":\"2025-09-07 16:53:44\"},\"default\":{\"QB\":true}}],\"limit\":10,\"public_api_limited\":true,\"tier\":\"free\"}",
+    "context": []
+}
