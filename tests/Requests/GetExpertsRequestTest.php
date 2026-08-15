@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace FantasyPros\Tests\Requests;
 
-use FantasyPros\Data\ApiLimits;
-use FantasyPros\Data\ExpertDirectory;
-use FantasyPros\Data\ExpertProfile;
-use FantasyPros\Data\Payload;
+use FantasyPros\Data\Api\ExpertProfile;
+use FantasyPros\Data\Envelopes\ExpertDirectory;
+use FantasyPros\Data\Infrastructure\ApiLimits;
+use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\NflPosition;
 use FantasyPros\Enums\NflRankingType;
 use FantasyPros\Enums\NflScoringType;

@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Api;
 
+use FantasyPros\Data\Contracts\ApiDataContract;
+use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\NflPosition;
 
 /**

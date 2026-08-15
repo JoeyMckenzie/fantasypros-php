@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FantasyPros\Requests;
 
-use FantasyPros\Data\PlayerComparison;
+use FantasyPros\Data\Envelopes\PlayerComparison;
 use FantasyPros\Enums\ComparisonDetails;
 use FantasyPros\Enums\ComparisonRankingType;
 use FantasyPros\Enums\NflPosition;

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace FantasyPros\Tests\Requests;
 
-use FantasyPros\Data\ApiLimits;
-use FantasyPros\Data\ConsensusRankedPlayer;
-use FantasyPros\Data\ConsensusRankings;
-use FantasyPros\Data\Payload;
-use FantasyPros\Data\RankingExpert;
+use FantasyPros\Data\Api\ConsensusRankedPlayer;
+use FantasyPros\Data\Api\RankingExpert;
+use FantasyPros\Data\Envelopes\ConsensusRankings;
+use FantasyPros\Data\Infrastructure\ApiLimits;
+use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\ExpertsDetail;
 use FantasyPros\Enums\NflPosition;
 use FantasyPros\Enums\NflRankingType;

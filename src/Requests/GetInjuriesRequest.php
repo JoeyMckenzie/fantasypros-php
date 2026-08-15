@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FantasyPros\Requests;
 
-use FantasyPros\Data\InjuryReport;
+use FantasyPros\Data\Envelopes\InjuryReport;
 use FantasyPros\Enums\Sport;
 use Override;
 use Saloon\Enums\Method;

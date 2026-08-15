@@ -2,8 +2,13 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Envelopes;
 
+use FantasyPros\Data\Api\ComparedExpert;
+use FantasyPros\Data\Api\ComparedPlayer;
+use FantasyPros\Data\Api\ExpertRank;
+use FantasyPros\Data\Infrastructure\ApiLimits;
+use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\NflScoringType;
 use FantasyPros\Enums\Sport;
 use Saloon\Http\Response;

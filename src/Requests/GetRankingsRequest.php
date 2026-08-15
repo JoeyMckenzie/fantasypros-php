@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FantasyPros\Requests;
 
-use FantasyPros\Data\RankingsCollection;
+use FantasyPros\Data\Envelopes\RankingsCollection;
 use FantasyPros\Enums\Sport;
 use Override;
 use Saloon\Enums\Method;

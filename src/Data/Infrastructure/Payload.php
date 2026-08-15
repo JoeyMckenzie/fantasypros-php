@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Infrastructure;
 
 use FantasyPros\Exceptions\UnexpectedPayloadException;
 use Saloon\Http\Response;

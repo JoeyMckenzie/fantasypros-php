@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FantasyPros\Tests\Data;
 
-use FantasyPros\Data\Payload;
+use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Exceptions\UnexpectedPayloadException;
 use FantasyPros\FantasyProsConnector;
 use FantasyPros\Tests\Doubles\StubRequest;

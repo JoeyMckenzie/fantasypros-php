@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Api;
+
+use FantasyPros\Data\Infrastructure\Payload;
 
 /**
  * One expert behind a consensus ranking set.

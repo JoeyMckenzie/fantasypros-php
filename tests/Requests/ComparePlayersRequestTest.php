@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace FantasyPros\Tests\Requests;
 
-use FantasyPros\Data\ComparedExpert;
-use FantasyPros\Data\ComparedPlayer;
-use FantasyPros\Data\ExpertRank;
-use FantasyPros\Data\PlayerComparison;
+use FantasyPros\Data\Api\ComparedExpert;
+use FantasyPros\Data\Api\ComparedPlayer;
+use FantasyPros\Data\Api\ExpertRank;
+use FantasyPros\Data\Envelopes\PlayerComparison;
 use FantasyPros\Enums\ComparisonDetails;
 use FantasyPros\Enums\ComparisonRankingType;
 use FantasyPros\Enums\NflPosition;

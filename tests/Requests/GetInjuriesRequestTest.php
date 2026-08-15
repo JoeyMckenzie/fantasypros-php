@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace FantasyPros\Tests\Requests;
 
-use FantasyPros\Data\ApiLimits;
-use FantasyPros\Data\InjuryReport;
-use FantasyPros\Data\NflInjury;
+use FantasyPros\Data\Api\NflInjury;
+use FantasyPros\Data\Envelopes\InjuryReport;
+use FantasyPros\Data\Infrastructure\ApiLimits;
 use FantasyPros\Enums\NflInjuryStatus;
 use FantasyPros\Enums\Sport;
 use FantasyPros\Requests\GetInjuriesRequest;

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Infrastructure;
+
+use FantasyPros\Data\Contracts\ApiDataContract;
 
 /**
  * The quota envelope every response carries.

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FantasyPros\Requests;
 
-use FantasyPros\Data\ConsensusRankings;
+use FantasyPros\Data\Envelopes\ConsensusRankings;
 use FantasyPros\Enums\ExpertsDetail;
 use FantasyPros\Enums\NflPosition;
 use FantasyPros\Enums\NflRankingType;

@@ -2,18 +2,25 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Envelopes;
 
+use FantasyPros\Data\Api\RankedPlayer;
+use FantasyPros\Data\Infrastructure\ApiLimits;
+use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\Sport;
 use Saloon\Http\Response;
 
 /**
- * The players endpoint envelope.
+ * The rankings endpoint envelope.
+ *
+ * The payload's `experts` and `ecr_experts` maps (counts and ID lists per
+ * scoring and position) are deliberately not mapped -- nothing reads them yet,
+ * and they are three levels of nesting deep.
  */
-final readonly class PlayerCollection
+final readonly class RankingsCollection
 {
     /**
-     * @param  list<NflPlayer>  $players
+     * @param  list<RankedPlayer>  $players
      */
     public function __construct(
         public Sport $sport,
@@ -34,7 +41,7 @@ final readonly class PlayerCollection
             season: $payload->int('season'),
             week: $payload->int('week'),
             players: array_map(
-                NflPlayer::fromPayload(...),
+                RankedPlayer::fromPayload(...),
                 $payload->objects('players'),
             ),
             limits: ApiLimits::fromPayload($payload),

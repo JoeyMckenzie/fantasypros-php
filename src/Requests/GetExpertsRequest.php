@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FantasyPros\Requests;
 
-use FantasyPros\Data\ExpertDirectory;
+use FantasyPros\Data\Envelopes\ExpertDirectory;
 use FantasyPros\Enums\NflPosition;
 use FantasyPros\Enums\NflRankingType;
 use FantasyPros\Enums\NflScoringType;

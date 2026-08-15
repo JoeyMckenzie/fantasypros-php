@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace FantasyPros\Requests;
 
 use DateTimeImmutable;
-use FantasyPros\Data\PlayerCollection;
+use FantasyPros\Data\Envelopes\PlayerCollection;
 use FantasyPros\Enums\EcrFilter;
 use FantasyPros\Enums\ExternalIdSource;
 use FantasyPros\Enums\Sport;

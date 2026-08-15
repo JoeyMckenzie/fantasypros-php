@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Contracts;
+
+use FantasyPros\Data\Infrastructure\Payload;
 
 /**
  * A DTO hydrated from one decoded JSON object.

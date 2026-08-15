@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace FantasyPros\Requests;
 
-use FantasyPros\Data\NewsFeed;
+use FantasyPros\Data\Envelopes\NewsFeed;
 use FantasyPros\Enums\NewsCategory;
 use FantasyPros\Enums\NewsOrder;
 use FantasyPros\Enums\Sport;

@@ -2,8 +2,12 @@
 
 declare(strict_types=1);
 
-namespace FantasyPros\Data;
+namespace FantasyPros\Data\Envelopes;
 
+use FantasyPros\Data\Api\ConsensusRankedPlayer;
+use FantasyPros\Data\Api\RankingExpert;
+use FantasyPros\Data\Infrastructure\ApiLimits;
+use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\Sport;
 use Saloon\Http\Response;
 

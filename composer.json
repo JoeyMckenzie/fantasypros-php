@@ -10,7 +10,7 @@
     "api-client",
     "saloon"
   ],
-  "homepage": "https://github.com/JoeyMckenzie/fantasy",
+  "homepage": "https://github.com/JoeyMckenzie/fantasypros-php",
   "type": "library",
   "authors": [
     {
@@ -39,8 +39,8 @@
   },
   "minimum-stability": "stable",
   "support": {
-    "issues": "https://github.com/JoeyMckenzie/fantasy/issues",
-    "source": "https://github.com/JoeyMckenzie/fantasy"
+    "issues": "https://github.com/JoeyMckenzie/fantasypros-php/issues",
+    "source": "https://github.com/JoeyMckenzie/fantasypros-php"
   },
   "autoload": {
     "psr-4": {
@@ -71,6 +71,7 @@
     "refactor": "rector process",
     "refactor:check": "rector process --dry-run",
     "test": "phpunit",
+    "test:arch": "deptrac",
     "test:record": "FANTASY_FIXTURES=record phpunit",
     "test:mutate": "XDEBUG_MODE=coverage infection --show-mutations",
     "fixtures:refresh": "rm -rf tests/Fixtures/Saloon && FANTASY_FIXTURES=record phpunit"
