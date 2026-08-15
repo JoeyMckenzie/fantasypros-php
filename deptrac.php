@@ -14,6 +14,7 @@ return static function (DeptracConfig $config): void {
         ->layers(
             $connector = Layer::withName('connector')->collectors(
                 ClassLikeConfig::create(FantasyPros\FantasyProsConnector::class),
+                DirectoryConfig::create('Concerns'),
             ),
             $requests = Layer::withName('requests')->collectors(
                 DirectoryConfig::create('Requests'),

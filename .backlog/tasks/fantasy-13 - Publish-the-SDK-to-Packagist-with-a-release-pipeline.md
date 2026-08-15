@@ -5,14 +5,16 @@ status: In Progress
 assignee:
   - '@claude'
 created_date: '2026-08-14 21:38'
-updated_date: '2026-08-14 22:18'
+updated_date: '2026-08-15 22:55'
 labels:
   - sdk
   - release
+milestone: SDK v0.1.0
 dependencies:
   - FANTASY-12
   - FANTASY-8
   - FANTASY-14
+  - FANTASY-16
 priority: medium
 ordinal: 13000
 ---
@@ -98,4 +100,14 @@ ACs #3 and #4 (CI runs the gate on every supported version; CI needs no API key)
 The maintainer is handling Packagist registration and tagging themselves. Everything up to that point is in place. For the record, the remaining steps are: submit `https://github.com/JoeyMckenzie/fantasy` at packagist.org/packages/submit, add the GitHub service hook so tags sync automatically, then `git tag -a v0.1.0 -m "v0.1.0" && git push origin v0.1.0`.
 
 Worth deciding before the first tag: the endpoint set is incomplete (FANTASY-6 covers projections and player-points, FANTASY-7 typed error handling), so a `0.x` first tag leaves room to change the public surface without a major bump.
+
+## Update after FANTASY-15/16/17 (2026-08-15)
+
+**The repo rename happened.** The earlier note flagged that `composer.json`'s URLs pointed at `github.com/JoeyMckenzie/fantasy` while the package is named `joeymckenzie/fantasypros-php`, and that the URLs would need updating if the repo were renamed. The maintainer has since renamed it — `homepage` and both `support` links now read `fantasypros-php`. Confirm the GitHub remote and the Packagist submission URL match before tagging.
+
+**A `test:arch` composer script was added** for Deptrac. The gate is now: `test`, `fmt:check`, `refactor:check`, `lint`, `test:arch`, `test:mutate`.
+
+**The public surface changed shape, which matters for the first tag.** Consumers now call endpoint methods on the connector (`$connector->players(...)`) rather than constructing Requests and calling `->dto()`. That is the API being published, so the README (FANTASY-8) must teach it, and this task now depends on FANTASY-16.
+
+The argument for a `0.x` first tag is stronger than before: the endpoint set is still incomplete (FANTASY-6), typed error handling is not in place (FANTASY-7), and every future endpoint adds a method to the connector's public surface. A `0.x` line leaves room for that without a major bump each time.
 <!-- SECTION:NOTES:END -->
