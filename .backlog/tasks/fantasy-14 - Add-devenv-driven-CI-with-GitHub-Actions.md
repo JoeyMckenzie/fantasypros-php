@@ -1,11 +1,11 @@
 ---
 id: FANTASY-14
 title: Add devenv-driven CI with GitHub Actions
-status: In Progress
+status: Done
 assignee:
   - '@claude'
 created_date: '2026-08-14 22:17'
-updated_date: '2026-08-15 23:10'
+updated_date: '2026-08-15 23:20'
 labels:
   - sdk
   - ci
@@ -53,7 +53,7 @@ A previous attempt at this task wrote a `shivammathur/setup-php` matrix workflow
 - [x] #4 CI passes with no repository secrets configured, and no workflow invokes composer test:record or runs the examples/ scripts
 - [x] #5 actions/checkout is pinned to a commit SHA with persist-credentials disabled, and the workflow declares least-privilege permissions
 - [x] #6 Dependabot keeps the GitHub Actions ecosystem updated on a schedule, mirroring the website repo's configuration
-- [ ] #7 A CI run is green end to end on a real push or pull request, not only reasoned about locally
+- [x] #7 A CI run is green end to end on a real push or pull request, not only reasoned about locally
 <!-- AC:END -->
 
 ## Implementation Notes
@@ -111,4 +111,22 @@ This mattered *now* because it passed the ≥95 gate at 98%: putting Infection i
 AC #7 (green run on a real push) is not met and cannot be met from here: `gh` is unauthenticated in this environment and the workflow only exists in the working tree. It needs a push or PR against JoeyMckenzie/fantasy to close.
 
 Left alone deliberately, from FANTASY-15/16 drift rather than this ticket: CONTRIBUTING's 'Deptrac enforces the internal layering' paragraph still describes the old five layers (connector / requests / data / enums / exceptions) rather than the current eight. Worth folding into FANTASY-8's docs pass.
+
+AC #7 closed twice over: push run 31914293821 on main green (lint 3m, test 3m20s), and pull_request run 31914267928 green on Dependabot PR #1. Both triggers exercised on real events, not simulated.
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+CI is live and green. Two devenv-driven jobs on push to `main` and on pull requests — `lint` (fmt:check, refactor:check, lint, test:arch) and `test` (test, test:mutate) — each running the identical `devenv shell ci-lint` / `ci-test` scripts a developer runs locally. No secrets, no `test:record`, no `examples/`. Verified on real events, not reasoned about: push run **31914293821** green, and pull_request run **31914267928** green on Dependabot's own PR.
+
+**The PHP-range decision turned out to be a live defect, not a coverage gap.** `devenv -O languages.php.version:string "8.4"` works with one flag, so the matrix option was viable — but running the suite under it fatally errored: `Attribute "Override" cannot target property`. All seven request classes in `src/` carry `#[Override]` on `protected Method $method`, which is PHP 8.5-only syntax. **The package claimed `^8.4` and could not parse there at all.** `composer check-platform-reqs` passes clean, because it checks constraints and extensions and never that the code parses — which is why nothing had caught it.
+
+Both exits were costed before the call: deleting the attribute leaves PHPStan level max clean and Rector does not re-add it. The maintainer chose to narrow the claim to `^8.5` rather than keep 8.4 reach, so CI now verifies exactly what the package promises on a single pinned version. `rector.php` followed to `php85: true` — verified a no-op against current source.
+
+**Infection's ignores had gone dead in silence.** Baseline was MSI 98% with four escaped mutants: all three `ignore` entries still named pre-FANTASY-15 FQCNs (`Data\Payload` where the class now lives at `Data\Infrastructure\Payload`, and two more). Infection never warns when an `ignore` matches nothing, so the namespace split orphaned them without a sound, and the ≥95 gate kept passing at 98% so nothing surfaced it. Putting Infection into CI would have frozen a config whose own comment claimed 100%. Corrected — back to **MSI 100%, 0 escaped**.
+
+**Dependabot validated itself within a minute of landing.** It covers github-actions and composer (weekly, 5-day cooldown, grouped). PR #1 already refreshes the `actions/checkout` SHA — the pin inherited from the website repo was itself stale — and bumps `cachix-action` v16 → v17, which clears the Node 20 deprecation annotation both jobs currently emit. That PR is green and left open for the maintainer.
+
+The gate is now the same artifact locally and in CI, so "it passes on my machine" and "it passes on main" finally mean the same thing.
+<!-- SECTION:FINAL_SUMMARY:END -->

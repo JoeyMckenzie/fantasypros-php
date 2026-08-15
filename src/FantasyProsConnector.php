@@ -9,6 +9,7 @@ use FantasyPros\Concerns\SupportsExpertEndpoints;
 use FantasyPros\Concerns\SupportsInjuryEndpoints;
 use FantasyPros\Concerns\SupportsNewsEndpoints;
 use FantasyPros\Concerns\SupportsPlayerEndpoints;
+use FantasyPros\Concerns\SupportsProjectionEndpoints;
 use FantasyPros\Concerns\SupportsRankingEndpoints;
 use FantasyPros\Exceptions\MissingApiKeyException;
 use Override;
@@ -32,6 +33,7 @@ final class FantasyProsConnector extends Connector
     use SupportsInjuryEndpoints;
     use SupportsNewsEndpoints;
     use SupportsPlayerEndpoints;
+    use SupportsProjectionEndpoints;
     use SupportsRankingEndpoints;
 
     public const string BASE_URL = 'https://api.fantasypros.com/public/v2/json';

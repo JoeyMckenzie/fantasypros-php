@@ -1,0 +1,30 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "993",
+        "Connection": "keep-alive",
+        "Date": "Sat, 15 Aug 2026 23:29:14 GMT",
+        "x-amzn-RequestId": "a25751cd-fd95-4b34-ba5f-8308b776f0a3",
+        "Access-Control-Allow-Origin": "https:\/\/www.fantasypros.com",
+        "x-amzn-Remapped-Content-Length": "993",
+        "x-amzn-Remapped-Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Via": "1.1 21fe0e69004d87d63e0024c8e921008a.cloudfront.net (CloudFront), 1.1 854d26865576ec09b27bbf1990553426.cloudfront.net (CloudFront)",
+        "x-amz-apigw-id": "CKtrxEEyIAMETzg=",
+        "Cache-Control": "max-age=180, must-revalidate",
+        "x-amzn-Remapped-Server": "Apache\/2.4.52 (Ubuntu)",
+        "X-Amz-Cf-Pop": [
+            "IAD89-P4",
+            "SFO53-P12"
+        ],
+        "x-amzn-Remapped-Date": "Sat, 15 Aug 2026 23:27:50 GMT",
+        "Vary": "Accept-Encoding,Origin",
+        "X-Cache": "Miss from cloudfront",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "l37WSFYwZiEjzx4GrlIlapalKPzAtyCH5qjlwt0KU2IF6UYAiaYyIA==",
+        "Age": "84"
+    },
+    "data": "{\"season\":\"2025\",\"week\":\"4\",\"count\":\"2\",\"positions\":\"RB\",\"scoring\":\"STD\",\"players\":[{\"fpid\":16393,\"mflid\":13130,\"name\":\"Christian McCaffrey\",\"position_id\":\"RB\",\"team_id\":\"SF\",\"filename\":\"christian-mccaffrey.php\",\"stats\":{\"points\":17.78,\"points_ppr\":23.3,\"points_half\":20.54,\"rush_att\":17.65,\"rush_yds\":77.66,\"rush_tds\":0.55,\"rush_yds_100\":0,\"rush_yds_200\":0,\"scrimage_yards_100\":0,\"scrimage_yards_200\":0,\"rec_rec\":5.52,\"rec_yds\":50.05,\"rec_tds\":0.32,\"rec_yds_100\":0,\"rec_yds_200\":0,\"fumbles\":0.1,\"ret_tds\":0,\"2pt_tds\":0}},{\"fpid\":22968,\"mflid\":16162,\"name\":\"Jahmyr Gibbs\",\"position_id\":\"RB\",\"team_id\":\"DET\",\"filename\":\"jahmyr-gibbs.php\",\"stats\":{\"points\":15.18,\"points_ppr\":18.64,\"points_half\":16.91,\"rush_att\":14.59,\"rush_yds\":71.66,\"rush_tds\":0.74,\"rush_yds_100\":0,\"rush_yds_200\":0,\"scrimage_yards_100\":0,\"scrimage_yards_200\":0,\"rec_rec\":3.46,\"rec_yds\":27.95,\"rec_tds\":0.16,\"rec_yds_100\":0,\"rec_yds_200\":0,\"fumbles\":0.08,\"ret_tds\":0,\"2pt_tds\":0}}],\"public_api_limited\":true,\"tier\":\"premium\"}",
+    "context": []
+}

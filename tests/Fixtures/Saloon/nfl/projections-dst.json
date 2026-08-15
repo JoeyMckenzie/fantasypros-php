@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "442",
+        "Connection": "keep-alive",
+        "Date": "Sat, 15 Aug 2026 23:29:15 GMT",
+        "x-amzn-Remapped-Date": "Sat, 15 Aug 2026 23:29:15 GMT",
+        "x-amzn-RequestId": "02c6fecb-5fdc-4f07-aa5d-92e76b6d1d02",
+        "Access-Control-Allow-Origin": "https:\/\/www.fantasypros.com",
+        "x-amzn-Remapped-Content-Length": "442",
+        "x-amzn-Remapped-Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Via": "1.1 2f76b89b5b812e346fc5b368361bed3c.cloudfront.net (CloudFront), 1.1 eed85a37ae50b504f09fc48c1ab26748.cloudfront.net (CloudFront)",
+        "x-amz-apigw-id": "CKtrzGNjIAMEoBQ=",
+        "Cache-Control": "max-age=180, must-revalidate",
+        "x-amzn-Remapped-Server": "Apache\/2.4.52 (Ubuntu)",
+        "X-Amz-Cf-Pop": [
+            "IAD89-P4",
+            "SFO53-P12"
+        ],
+        "Vary": "Accept-Encoding,Origin",
+        "X-Cache": "Miss from cloudfront",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "4wmECy3LDlJ5MAJcSt-TzwGDeUYQBYBBMQ3R8LrZoU23d7RPJxoUOg=="
+    },
+    "data": "{\"season\":\"2025\",\"week\":\"4\",\"count\":\"1\",\"positions\":\"DST\",\"scoring\":\"STD\",\"players\":[{\"fpid\":8090,\"mflid\":511,\"name\":\"Denver Broncos\",\"position_id\":\"DST\",\"team_id\":\"DEN\",\"filename\":\"denver-defense.php\",\"stats\":{\"points\":9.04,\"points_ppr\":9.04,\"points_half\":9.04,\"def_sack\":3.75,\"def_int\":0.96,\"def_td\":0.18,\"def_pa\":18.56,\"def_tyda\":311.74,\"def_safety\":0,\"def_ff\":1.11,\"def_fr\":0.65,\"def_retd\":0}}],\"public_api_limited\":true,\"tier\":\"premium\"}",
+    "context": []
+}

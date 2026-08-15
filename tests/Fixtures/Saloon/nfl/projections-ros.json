@@ -1,0 +1,29 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "154",
+        "Connection": "keep-alive",
+        "Date": "Sat, 15 Aug 2026 23:29:15 GMT",
+        "x-amzn-Remapped-Date": "Sat, 15 Aug 2026 23:29:15 GMT",
+        "x-amzn-RequestId": "9eba5df9-3764-453c-a587-39ab07306e29",
+        "Access-Control-Allow-Origin": "https:\/\/www.fantasypros.com",
+        "x-amzn-Remapped-Content-Length": "154",
+        "x-amzn-Remapped-Connection": "keep-alive",
+        "Access-Control-Allow-Credentials": "true",
+        "Via": "1.1 d4092e82a459f6273b0eee34e2db6046.cloudfront.net (CloudFront), 1.1 1d0952b39a1f14a100a952bab10a6ade.cloudfront.net (CloudFront)",
+        "x-amz-apigw-id": "CKtr2FstIAMECTw=",
+        "Cache-Control": "max-age=180, must-revalidate",
+        "x-amzn-Remapped-Server": "Apache\/2.4.52 (Ubuntu)",
+        "X-Amz-Cf-Pop": [
+            "IAD89-P4",
+            "SFO53-P12"
+        ],
+        "Vary": "Accept-Encoding,Origin",
+        "X-Cache": "Miss from cloudfront",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "H6DXFMm22qB0wIC_ZsCNEtkDSlc1zEMktROtAlv7NvYt6HQndxEvYQ=="
+    },
+    "data": "{\"season\":\"2025\",\"week\":\"0\",\"count\":\"0\",\"positions\":\"RB\",\"scoring\":\"STD\",\"ros_projections\":true,\"players\":null,\"public_api_limited\":true,\"tier\":\"premium\"}",
+    "context": []
+}
