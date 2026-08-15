@@ -22,7 +22,7 @@
         // to int on its own, and casting a string to string is a no-op. Both
         // mutants are therefore unkillable by construction.
         "CastInt": {
-            "ignore": ["FantasyPros\\Data\\PlayerComparison::readRankings"]
+            "ignore": ["FantasyPros\\Data\\Envelopes\\PlayerComparison::readRankings"]
         },
         // RankedPlayer::readRanks is the same case: objectMap hands back
         // array-key keys, and the cast makes the declared array<string, ...> key
@@ -30,8 +30,8 @@
         // never coerces to int, so removing the cast changes nothing observable.
         "CastString": {
             "ignore": [
-                "FantasyPros\\Data\\PlayerComparison::readRankings",
-                "FantasyPros\\Data\\RankedPlayer::readRanks",
+                "FantasyPros\\Data\\Envelopes\\PlayerComparison::readRankings",
+                "FantasyPros\\Data\\Api\\RankedPlayer::readRanks",
             ]
         },
         // Same story: the (float) cast on an already-numeric value is there so
@@ -39,13 +39,10 @@
         // float via the return type on its own, even under strict_types, so
         // dropping the cast is unobservable and no test can kill the mutant.
         "CastFloat": {
-            "ignore": ["FantasyPros\\Data\\Payload::nullableFloat"]
+            "ignore": ["FantasyPros\\Data\\Infrastructure\\Payload::nullableFloat"]
         }
     },
     "timeout": 5,
     "threads": "max",
-    // Currently at 100% with three documented mutator exclusions. 95 leaves a
-    // little headroom for genuinely harmless mutants in new endpoint code
-    // without letting a real gap slide through.
-    "minMsi": 95
+    "minMsi": 100
 }

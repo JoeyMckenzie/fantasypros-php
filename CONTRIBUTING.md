@@ -20,11 +20,16 @@ composer fmt          # Laravel Pint
 composer refactor     # Rector
 composer lint         # PHPStan level max, 100% type coverage
 composer test         # PHPUnit, offline
-./vendor/bin/deptrac analyse --config-file=deptrac.php
+composer test:arch    # Deptrac
 composer test:mutate  # Infection, minMsi 95
 ```
 
 `composer fmt:check` and `composer refactor:check` are the non-mutating variants.
+
+GitHub Actions runs exactly this gate, through the two devenv scripts it is split into —
+`devenv shell ci-lint` (fmt:check, refactor:check, lint, test:arch) and `devenv shell
+ci-test` (test, test:mutate). Both are runnable locally and use the same devenv shell CI
+does, so a green run here and a green run there mean the same thing. CI needs no secrets.
 
 **Deptrac enforces the internal layering**, outermost first: `connector` may reach
 anything; `requests` may reach `data`, `enums` and `exceptions`; `data` may reach `enums`
