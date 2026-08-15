@@ -120,6 +120,6 @@ in
   enterShell = ''
     if [ ! -d vendor ]; then composer install; fi
 
-    figlet "Fantasy"
+    figlet "FantasyPros"
   '';
 }
