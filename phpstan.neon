@@ -6,6 +6,7 @@ parameters:
     paths:
         - src
         - tests
+        - examples
     tmpDir: .phpstan.cache
     type_coverage:
         return: 100

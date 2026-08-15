@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace FantasyPros\Tests\Requests;
 
 use DateTimeImmutable;
+use FantasyPros\Data\Api\ApiLimits;
 use FantasyPros\Data\Api\NflPlayer;
 use FantasyPros\Data\Envelopes\PlayerCollection;
-use FantasyPros\Data\Infrastructure\ApiLimits;
 use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\EcrFilter;
 use FantasyPros\Enums\ExternalIdSource;

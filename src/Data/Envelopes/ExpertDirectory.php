@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace FantasyPros\Data\Envelopes;
 
+use FantasyPros\Data\Api\ApiLimits;
 use FantasyPros\Data\Api\ExpertProfile;
-use FantasyPros\Data\Infrastructure\ApiLimits;
 use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\Sport;
 use Saloon\Http\Response;

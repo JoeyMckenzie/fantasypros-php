@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace FantasyPros\Tests\Requests;
 
+use FantasyPros\Data\Api\ApiLimits;
 use FantasyPros\Data\Api\ExpertProfile;
 use FantasyPros\Data\Envelopes\ExpertDirectory;
-use FantasyPros\Data\Infrastructure\ApiLimits;
 use FantasyPros\Data\Infrastructure\Payload;
 use FantasyPros\Enums\NflPosition;
 use FantasyPros\Enums\NflRankingType;
