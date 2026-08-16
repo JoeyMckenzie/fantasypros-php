@@ -1,4 +1,4 @@
-# fantasypros-php
+# FantasyPros PHP
 
 A PHP client for the [FantasyPros API](https://api.fantasypros.com): players, rankings,
 projections, news and injuries. Built on [Saloon](https://docs.saloon.dev).
