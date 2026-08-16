@@ -70,9 +70,9 @@ final readonly class NflPlayer implements ApiDataContract
     }
 
     /**
-     * The primary position as an enum, or null if the API reports one the spec
-     * does not enumerate. Deliberately non-throwing -- an unknown position
-     * should not break an otherwise usable player.
+     * The primary position as an enum, or null if the API reports one the
+     * spec doesn't enumerate. It won't throw: an unknown position shouldn't
+     * break an otherwise usable player.
      */
     public function position(): ?NflPosition
     {

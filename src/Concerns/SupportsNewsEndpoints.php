@@ -21,7 +21,7 @@ use Saloon\Http\Connector;
 trait SupportsNewsEndpoints
 {
     /**
-     * GET /{sport}/news -- the player news feed.
+     * GET /{sport}/news: the player news feed.
      *
      * The endpoint caps `$limit` at 100 and defaults to 25 when omitted; those
      * defaults are left to it rather than restated here, where they would

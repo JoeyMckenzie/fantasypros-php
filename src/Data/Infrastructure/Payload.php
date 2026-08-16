@@ -10,8 +10,8 @@ use Saloon\Http\Response;
 /**
  * Typed reader over one decoded JSON object.
  *
- * The API is loose about scalar types -- `count` arrives as an integer while
- * `season`, `week` and every `rank` arrive as numeric strings -- so reading
+ * The API is loose about scalar types. `count` arrives as an integer while
+ * `season`, `week` and every `rank` arrive as numeric strings, so reading
  * through here keeps the coercion in one place instead of scattered across
  * every DTO.
  */
@@ -32,8 +32,8 @@ final readonly class Payload
 
     /**
      * Decodes the raw body rather than calling Response::json(), whose phpdoc
-     * promises an array -- a promise json_decode does not actually keep for a
-     * scalar body, so the guard below would be unverifiable.
+     * promises an array. json_decode doesn't keep that promise for a scalar
+     * body, so the guard below would be unverifiable.
      */
     public static function fromResponse(Response $response): self
     {
@@ -107,8 +107,8 @@ final readonly class Payload
     }
 
     /**
-     * Numeric strings count, since probabilities arrive as strings. Note "0" is
-     * a real value -- no chance of playing -- and must not collapse to null.
+     * Numeric strings count, since probabilities arrive as strings. Note "0"
+     * is a real value (no chance of playing) and must not collapse to null.
      */
     public function nullableFloat(string $key): ?float
     {

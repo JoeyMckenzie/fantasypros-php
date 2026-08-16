@@ -20,7 +20,7 @@ $connector = FantasyProsConnector::fromEnvironment();
 $season = (int) (new DateTimeImmutable)->format('Y') - 1;
 
 /**
- * GET /NFL/{season}/player-points -- points actually scored, week by week.
+ * GET /NFL/{season}/player-points: points actually scored, week by week.
  *
  * The counterpart to projections. Every parameter is optional; without a range
  * the API counts the whole regular season.
@@ -41,8 +41,8 @@ printf(
 );
 
 // A player who did not appear in the requested range comes back as an identity
-// block alone -- no games, points, average or weeks -- despite the spec marking
-// all four required. They read as a scoreless line rather than throwing.
+// block alone, with no games, points, average or weeks, despite the spec
+// marking all four required. They read as a scoreless line rather than throwing.
 $played = array_values(array_filter(
     $points->players,
     static fn (PlayerPoints $player): bool => $player->games > 0,
@@ -67,7 +67,7 @@ foreach (array_slice($played, 0, 10) as $player) {
 }
 
 // The weekly breakdown is keyed by week number, and only the weeks a player
-// actually played appear -- so it is sparser than the range asked for.
+// actually played appear, so it's sparser than the range you asked for.
 $leader = $played[0] ?? null;
 
 if ($leader instanceof PlayerPoints) {

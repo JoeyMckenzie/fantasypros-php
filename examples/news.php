@@ -15,7 +15,7 @@ $dotenv->load();
 $connector = FantasyProsConnector::fromEnvironment();
 
 /**
- * GET /NFL/news -- the player news feed.
+ * GET /NFL/news: the player news feed.
  *
  * The endpoint caps `limit` at 100 and defaults to 25 when omitted. Pass
  * `playerId` to narrow the feed to a single player.
@@ -27,7 +27,7 @@ $feed = $connector->news(
     orderBy: NewsOrder::Updated,
 );
 
-printf("%s -- %s\n", $feed->sport->value, $feed->title);
+printf("%s: %s\n", $feed->sport->value, $feed->title);
 printf("  %s\n", $feed->description);
 printf("  %d returned of %d\n", count($feed->items), $feed->count);
 

@@ -14,7 +14,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/{season}/player-points -- points actually scored, week by week.
+ * GET /{sport}/{season}/player-points: points actually scored, week by week.
  *
  * The counterpart to projections: this is what happened, not what was expected.
  */

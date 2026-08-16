@@ -44,9 +44,9 @@ final class RequestFailureTest extends TestCase
     }
 
     /**
-     * Both statuses the SDK treats as an auth failure. Only 403 has been seen
-     * from the live API -- a wrong key, an empty key and no key header at all
-     * all answer with it.
+     * Both statuses the SDK treats as an auth failure. Only 403 actually shows
+     * up: a wrong key, an empty key and no key header at all all answer with
+     * it.
      *
      * @return iterable<string, array{int}>
      */
@@ -92,8 +92,8 @@ final class RequestFailureTest extends TestCase
     }
 
     /**
-     * The 400 shape the spec documents. No request has been found that provokes
-     * one -- invalid parameters are silently ignored and answered with a 200 --
+     * The 400 shape the spec documents. Nothing has been found that provokes
+     * one, since bad parameters get silently ignored and answered with a 200,
      * so this is built from the documented body rather than a recorded one.
      */
     #[Test]
@@ -134,8 +134,8 @@ final class RequestFailureTest extends TestCase
             MockResponse::make(['message' => 'Something broke'], $status),
         );
 
-        // The fallback type, not one of the named causes -- and still carrying
-        // the marker interface, which is the point of AC #2.
+        // The fallback type rather than one of the named causes, still
+        // carrying the marker interface, which is the point of AC #2.
         self::assertInstanceOf(FantasyProsRequestException::class, $exception);
         self::assertInstanceOf(ApiRequestException::class, $exception);
         self::assertSame(sprintf('FantasyPros returned %d: Something broke', $status), $exception->getMessage());
@@ -164,10 +164,10 @@ final class RequestFailureTest extends TestCase
     }
 
     /**
-     * A `message` that is present but unusable -- empty, or not a string at all
-     * -- is treated as absent rather than forced into the message. The second
-     * case would be a type error if the guard were loosened, which is the point
-     * of checking both.
+     * A `message` that's present but unusable (empty, or not a string at all)
+     * counts as absent rather than getting forced into the message. The second
+     * case would be a type error if the guard were loosened, which is why both
+     * are here.
      *
      * @param  array<array-key, mixed>  $body
      */
@@ -203,7 +203,7 @@ final class RequestFailureTest extends TestCase
      * The mapped types stay inside Saloon's `RequestException` hierarchy on
      * purpose. `handleRetry` is typed `FatalRequestException|RequestException`,
      * so an exception outside that union would be a TypeError before the
-     * connector could decide whether to retry -- silently disabling retries for
+     * connector could decide whether to retry, silently disabling retries for
      * the transient failures they exist to absorb.
      */
     #[Test]
@@ -241,7 +241,7 @@ final class RequestFailureTest extends TestCase
             $this->impatientConnector()->send(new StubRequest, $mockClient);
             self::fail('An exhausted quota should surface as a RateLimitException.');
         } catch (RateLimitException) {
-            // Expected -- the assertion of interest is the attempt count below.
+            // Expected. The assertion that matters is the attempt count below.
         }
 
         self::assertCount(3, $mockClient->getRecordedResponses());

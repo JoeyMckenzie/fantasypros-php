@@ -18,7 +18,7 @@ $connector = FantasyProsConnector::fromEnvironment();
 $season = (int) (new DateTimeImmutable)->format('Y');
 
 /**
- * GET /NFL/{season}/projections -- projected stat lines for a position.
+ * GET /NFL/{season}/projections: projected stat lines for a position.
  *
  * `position` is required, as on consensus-rankings. Week 0 would ask for
  * preseason projections rather than meaning "no week given".
@@ -31,7 +31,7 @@ $projections = $connector->projections(
 );
 
 printf(
-    "NFL %d week %d -- %s projections, filed under %s\n",
+    "NFL %d week %d: %s projections, filed under %s\n",
     $projections->season,
     $projections->week,
     $projections->positions,
@@ -65,7 +65,7 @@ foreach (array_slice($projections->players, 0, 10) as $player) {
 
 /**
  * The stat line is a map because its keys change with the position. A defence
- * shares only the three points keys with the running backs above -- the spec's
+ * shares only the three points keys with the running backs above. The spec's
  * own per-position schemas get this wrong, naming `def_pa_a` through `def_pa_g`
  * where the live route returns `def_pa` and `def_tyda`.
  */
@@ -100,7 +100,7 @@ if ($first instanceof ProjectedPlayer) {
 /**
  * Rest-of-season projections. Worth knowing before relying on this: the API
  * accepts `ros`, echoes it back, and then answers with a literal `null` for
- * `players` once the season has no games left -- no error, just an empty set.
+ * `players` once the season has no games left. No error, just an empty set.
  */
 $restOfSeason = $connector->projections(
     sport: Sport::Nfl,

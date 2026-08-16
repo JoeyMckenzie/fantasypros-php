@@ -17,15 +17,15 @@ $connector = FantasyProsConnector::fromEnvironment();
 $season = (int) (new DateTimeImmutable)->format('Y');
 
 /**
- * GET /NFL/{season}/rankings/experts -- profiles of the ranking experts.
+ * GET /NFL/{season}/rankings/experts: profiles of the ranking experts.
  *
  * `position` is optional here, unlike on the consensus-rankings route.
  * `withOverallAccuracy` adds the `ALL` row to each accuracy map.
  *
  * `rankingType` is deliberately left off. It narrows to the experts who
  * published that specific ranking set, and a season that has not started yet
- * has none of them -- every NflRankingType returns an empty directory for the
- * current season, while 2025 answers WW and WAIVER. Pass it only when you are
+ * has none of them. Every NflRankingType returns an empty directory for the
+ * current season, while 2025 answers WW and WAIVER. Pass it only when you're
  * asking about a season whose rankings exist.
  */
 $directory = $connector->experts(
@@ -37,7 +37,7 @@ $directory = $connector->experts(
 );
 
 printf(
-    "%s experts -- season %d, week %d (%d returned of %d)\n",
+    "%s experts for season %d, week %d (%d returned of %d)\n",
     $directory->sport->value,
     $directory->season,
     $directory->week,

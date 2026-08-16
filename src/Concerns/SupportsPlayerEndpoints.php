@@ -26,7 +26,7 @@ use Saloon\Http\Connector;
 trait SupportsPlayerEndpoints
 {
     /**
-     * GET /{sport}/players -- rosters and player metadata.
+     * GET /{sport}/players: rosters and player metadata.
      *
      * @param  list<ExternalIdSource>  $externalIds  sites whose player IDs to fold in
      */

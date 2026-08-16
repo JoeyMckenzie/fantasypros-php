@@ -49,8 +49,8 @@ final class GetInjuriesRequestTest extends RequestTestCase
     }
 
     /**
-     * A single ID still goes out unadorned -- the separator only appears
-     * between entries.
+     * A single ID still goes out unadorned; the separator only appears between
+     * entries.
      */
     #[Test]
     public function a_single_id_carries_no_separator(): void
@@ -232,7 +232,7 @@ final class GetInjuriesRequestTest extends RequestTestCase
 
     /**
      * A player on the practice report with no injury designation comes back with
-     * an empty status -- a value the spec's enum does not contain, so hydrating
+     * an empty status, a value the spec's enum doesn't contain, so hydrating
      * straight into the enum would have thrown on a genuine payload.
      */
     #[Test]

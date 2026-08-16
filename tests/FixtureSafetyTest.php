@@ -15,7 +15,7 @@ use SplFileInfo;
 /**
  * Guards the committed fixtures against carrying the API key.
  *
- * Saloon structurally cannot write a request header into a fixture -- a
+ * Saloon structurally can't write a request header into a fixture, since a
  * RecordedResponse holds only the status, response headers, body and context.
  * The residual risk this covers is the response side: a gateway that echoes
  * x-api-key back, or a payload that quotes it.

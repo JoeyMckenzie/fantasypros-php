@@ -9,7 +9,7 @@ namespace FantasyPros\Enums;
  *
  * Only `Consensus` is always present. `Minimum`/`Maximum` arrive when the
  * request asks for `range`, and `Average`/`StandardDeviation` when it asks for
- * `rankstats` -- the spec describes neither the nesting nor these keys.
+ * `rankstats`. The spec describes neither the nesting nor these keys.
  */
 enum RankMetric: string
 {

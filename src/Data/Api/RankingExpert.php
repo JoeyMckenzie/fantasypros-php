@@ -9,8 +9,8 @@ use FantasyPros\Data\Infrastructure\Payload;
 /**
  * One expert behind a consensus ranking set.
  *
- * The wire keeps this split across three parallel ID-keyed maps -- `expert_pub`,
- * `expert_names` and `expert_twitter` -- so this folds them into one object per
+ * The wire splits this across three parallel ID-keyed maps (`expert_pub`,
+ * `expert_names` and `expert_twitter`), so this folds them into one object per
  * expert rather than making every caller zip three arrays together.
  *
  * Not an `ApiDataContract`: it is assembled from several sibling maps rather

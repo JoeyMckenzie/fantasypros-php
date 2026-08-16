@@ -22,7 +22,7 @@ use Saloon\Http\Connector;
 trait SupportsExpertEndpoints
 {
     /**
-     * GET /{sport}/{season}/rankings/experts -- profiles of the ranking experts.
+     * GET /{sport}/{season}/rankings/experts: profiles of the ranking experts.
      *
      * `$rankingType` narrows to the experts who published that specific ranking
      * set, so a season whose rankings do not exist yet returns an empty

@@ -32,7 +32,7 @@ final class GetPlayerPointsRequestTest extends RequestTestCase
     }
 
     /**
-     * Every parameter is optional here, unlike projections -- the API defaults
+     * Every parameter is optional here, unlike projections. The API defaults
      * to all positions across the whole regular season.
      */
     #[Test]
@@ -123,9 +123,9 @@ final class GetPlayerPointsRequestTest extends RequestTestCase
 
     /**
      * The spec marks `games`, `points`, `average` and `weeks` required. A player
-     * who did not appear in the requested range arrives with none of them --
-     * identity only -- so the recorded set is checked for that directly rather
-     * than trusting the schema.
+     * who didn't appear in the requested range arrives with none of them, just
+     * identity, so the recorded set is checked for that directly rather than
+     * trusting the schema.
      */
     #[Test]
     public function a_player_who_did_not_appear_arrives_as_an_identity_alone(): void
@@ -200,9 +200,9 @@ final class GetPlayerPointsRequestTest extends RequestTestCase
     }
 
     /**
-     * The weeks map arrives with numeric string keys, which PHP casts to int on
-     * the way into an array -- so `inWeek()` looking them up by int is correct
-     * rather than accidental.
+     * The weeks map arrives with numeric string keys, which PHP casts to int
+     * on the way into an array, so `inWeek()` looking them up by int is
+     * correct rather than accidental.
      */
     #[Test]
     public function week_keys_are_readable_as_integers(): void

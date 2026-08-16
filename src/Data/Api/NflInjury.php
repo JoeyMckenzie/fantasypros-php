@@ -11,9 +11,9 @@ use FantasyPros\Enums\NflInjuryStatus;
 /**
  * One NFL injury entry, including the weekly practice report.
  *
- * NFL-shaped on purpose, as `PlayerComparison` is: MLB adds minor-league fields
- * and carries no practice report at all, so a second sport gets its own DTO
- * rather than a stack of nullable NFL fields here.
+ * NFL-shaped, same as `PlayerComparison`. MLB adds minor-league fields and
+ * carries no practice report at all, so a second sport gets its own DTO rather
+ * than a stack of nullable NFL fields here.
  */
 final readonly class NflInjury implements ApiDataContract
 {
@@ -62,7 +62,7 @@ final readonly class NflInjury implements ApiDataContract
             statusShort: $payload->string('status_short'),
             injuryType: $payload->string('injury_type'),
             comment: $payload->string('comment'),
-            // Null in practice, despite the spec marking it required -- a
+            // Null in practice, despite the spec marking it required. A
             // practice-report-only player has no injury update to date.
             updatedAt: $payload->nullableString('injury_update_date'),
             injuredReserveWeeks: $payload->ints('ir_weeks'),
@@ -78,8 +78,8 @@ final readonly class NflInjury implements ApiDataContract
     }
 
     /**
-     * The status as an enum, or null when the API reports one the spec does not
-     * enumerate -- which includes the empty status it genuinely returns for
+     * The status as an enum, or null when the API reports one the spec doesn't
+     * enumerate. That includes the empty status it genuinely returns for
      * practice-report-only players.
      */
     public function status(): ?NflInjuryStatus

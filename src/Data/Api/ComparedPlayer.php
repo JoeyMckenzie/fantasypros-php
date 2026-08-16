@@ -9,7 +9,7 @@ use FantasyPros\Data\Infrastructure\Payload;
 
 /**
  * The thin player description the comparison endpoint returns in its `players`
- * lookup. Much smaller than NflPlayer -- no ranks, no IDs beyond the map key.
+ * lookup. Much smaller than NflPlayer: no ranks, no IDs beyond the map key.
  */
 final readonly class ComparedPlayer implements ApiDataContract
 {

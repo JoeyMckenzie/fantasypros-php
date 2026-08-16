@@ -17,7 +17,7 @@ $connector = FantasyProsConnector::fromEnvironment();
 $season = (int) (new DateTimeImmutable)->format('Y');
 
 /**
- * GET /NFL/{season}/rankings -- rankings across ranking types and positions.
+ * GET /NFL/{season}/rankings: rankings across ranking types and positions.
  *
  * `withRange` adds each player's min and max rank, `withRankStats` the average
  * and standard deviation. Without them the `ranks` map carries only the
@@ -31,7 +31,7 @@ $rankings = $connector->rankings(
 );
 
 printf(
-    "%s rankings -- season %d, week %d (%d returned of %d)\n",
+    "%s rankings for season %d, week %d (%d returned of %d)\n",
     $rankings->sport->value,
     $rankings->season,
     $rankings->week,

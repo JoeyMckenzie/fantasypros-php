@@ -15,7 +15,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/{season}/rankings/experts -- profiles of the ranking experts.
+ * GET /{sport}/{season}/rankings/experts: profiles of the ranking experts.
  */
 final class GetExpertsRequest extends Request
 {

@@ -13,11 +13,11 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/{season}/projections -- projected stat lines for a position.
+ * GET /{sport}/{season}/projections: projected stat lines for a position.
  *
  * The spec also documents a `filters` parameter here, described as "a comma
- * delimited string of expert IDs". Projections have no experts -- the text is
- * carried over from the ranking routes -- so it is deliberately not exposed.
+ * delimited string of expert IDs". Projections don't have experts; that text
+ * is carried over from the ranking routes, so we don't expose it.
  */
 final class GetProjectionsRequest extends Request
 {
@@ -62,8 +62,8 @@ final class GetProjectionsRequest extends Request
     {
         $query = [
             'position' => $this->position->value,
-            // Week 0 is meaningful -- it asks for preseason projections -- so it
-            // has to survive the filter below.
+            // Week 0 means something (preseason projections), so it has to
+            // survive the filter below.
             'week' => $this->week,
             'ros' => $this->restOfSeason ? 'true' : null,
             'positions' => $this->positions === [] ? null : implode(

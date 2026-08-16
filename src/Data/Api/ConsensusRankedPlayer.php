@@ -11,8 +11,8 @@ use FantasyPros\Data\Infrastructure\Payload;
  * One player in a consensus ranking set.
  *
  * The rank range fields are always present here, whatever the request asked
- * for -- unlike the rankings endpoint, where they only appear with `range=true`.
- * They arrive as numeric strings while `rank_ecr` arrives as an int.
+ * for. The rankings endpoint only sends them with `range=true`. They arrive as
+ * numeric strings while `rank_ecr` arrives as an int.
  */
 final readonly class ConsensusRankedPlayer implements ApiDataContract
 {

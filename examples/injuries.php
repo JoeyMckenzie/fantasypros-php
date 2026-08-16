@@ -13,7 +13,7 @@ $dotenv->load();
 $connector = FantasyProsConnector::fromEnvironment();
 
 /**
- * GET /NFL/injuries -- injury statuses and, for the NFL, the practice report.
+ * GET /NFL/injuries: injury statuses and, for the NFL, the practice report.
  *
  * `includeProbabilities` widens the report to players who appear on the
  * practice report without carrying an injury status. Narrowing by `teamIds`
@@ -26,7 +26,7 @@ $report = $connector->injuries(
 );
 
 printf(
-    "%s injuries -- %d returned of %d\n",
+    "%s injuries: %d returned of %d\n",
     $report->sport->value,
     count($report->injuries),
     $report->count,

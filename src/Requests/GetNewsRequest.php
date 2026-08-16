@@ -14,7 +14,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/news -- the player news feed.
+ * GET /{sport}/news: the player news feed.
  */
 final class GetNewsRequest extends Request
 {

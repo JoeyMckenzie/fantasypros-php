@@ -14,7 +14,7 @@ $dotenv->load();
 $connector = FantasyProsConnector::fromEnvironment();
 
 /**
- * GET /NFL/players -- rosters and player metadata.
+ * GET /NFL/players: rosters and player metadata.
  *
  * Folds in the Yahoo and ESPN player IDs and asks for each player's positional
  * rank, so the response carries more than the identity block.
@@ -26,7 +26,7 @@ $players = $connector->players(
 );
 
 printf(
-    "%s players -- season %d, week %d (%d returned of %d)\n",
+    "%s players for season %d, week %d (%d returned of %d)\n",
     $players->sport->value,
     $players->season,
     $players->week,

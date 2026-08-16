@@ -19,7 +19,7 @@ $connector = FantasyProsConnector::fromEnvironment();
 $season = (int) (new DateTimeImmutable)->format('Y');
 
 /**
- * GET /NFL/{season}/consensus-rankings -- the expert consensus for one position.
+ * GET /NFL/{season}/consensus-rankings: the expert consensus for one position.
  *
  * Unlike the experts route, `position` is required here. `ExpertsDetail::Show`
  * asks the endpoint to name the experts behind the consensus rather than just
@@ -35,7 +35,7 @@ $consensus = $connector->consensusRankings(
 );
 
 printf(
-    "%s -- %s (%s, %s) year %d week %d\n",
+    "%s: %s (%s, %s) year %d week %d\n",
     $consensus->sport->value,
     $consensus->label,
     $consensus->rankingType,

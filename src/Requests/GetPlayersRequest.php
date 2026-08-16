@@ -15,7 +15,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/players -- rosters and player metadata.
+ * GET /{sport}/players: rosters and player metadata.
  */
 final class GetPlayersRequest extends Request
 {
@@ -63,8 +63,8 @@ final class GetPlayersRequest extends Request
             'show' => $this->withPositionRank ? 'pos_rank' : null,
         ];
 
-        // Send only what was asked for -- an empty `?player=` is not the same
-        // as omitting it.
+        // Send only what was asked for. An empty `?player=` isn't the same as
+        // omitting it.
         return array_filter($query, static fn (string|int|null $value): bool => $value !== null);
     }
 }

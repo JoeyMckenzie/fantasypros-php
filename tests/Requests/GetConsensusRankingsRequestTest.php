@@ -137,8 +137,8 @@ final class GetConsensusRankingsRequestTest extends RequestTestCase
 
         self::assertSame(Sport::Nfl, $rankings->sport);
         // `type` is a display label while `ranking_type_name` is the machine
-        // name -- and the latter is lowercase, not the uppercase vocabulary the
-        // spec types it as.
+        // name, and the latter is lowercase rather than the uppercase
+        // vocabulary the spec types it as.
         self::assertSame('Weekly PPR', $rankings->label);
         self::assertSame('weekly', $rankings->rankingType);
         self::assertSame(2025, $rankings->year);
@@ -188,7 +188,7 @@ final class GetConsensusRankingsRequestTest extends RequestTestCase
 
     /**
      * AC #2. The range fields are present on every player whatever the request
-     * asked for -- unlike the rankings endpoint, where they need `range=true`.
+     * asked for. The rankings endpoint needs `range=true` for them.
      */
     #[Test]
     public function the_rank_range_hydrates_without_being_asked_for(): void

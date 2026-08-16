@@ -14,8 +14,8 @@ use Saloon\Http\Response;
  * The rankings endpoint envelope.
  *
  * The payload's `experts` and `ecr_experts` maps (counts and ID lists per
- * scoring and position) are deliberately not mapped -- nothing reads them yet,
- * and they are three levels of nesting deep.
+ * scoring and position) aren't mapped. Nothing reads them yet and they're
+ * three levels of nesting deep.
  */
 final readonly class RankingsCollection
 {

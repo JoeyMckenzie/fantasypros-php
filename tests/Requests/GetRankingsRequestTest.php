@@ -34,8 +34,8 @@ final class GetRankingsRequestTest extends RequestTestCase
     }
 
     /**
-     * The season is a path segment here, not a query parameter -- the first
-     * route in the SDK to carry anything beyond the sport.
+     * The season is a path segment here rather than a query parameter, making
+     * this the first route in the SDK to carry anything beyond the sport.
      */
     #[Test]
     #[DataProvider('seasonPaths')]
@@ -158,8 +158,8 @@ final class GetRankingsRequestTest extends RequestTestCase
     }
 
     /**
-     * The rank object is three levels deep -- metric, then scoring, then
-     * position -- which the spec does not describe at all.
+     * The rank object is three levels deep (metric, then scoring, then
+     * position), which the spec doesn't describe at all.
      */
     #[Test]
     public function the_consensus_rank_is_read_through_the_nesting(): void

@@ -27,7 +27,7 @@ use Saloon\Http\Connector;
 trait SupportsProjectionEndpoints
 {
     /**
-     * GET /{sport}/{season}/projections -- projected stat lines for a position.
+     * GET /{sport}/{season}/projections: projected stat lines for a position.
      *
      * @param  list<NflPosition>  $positions  narrow further to these positions
      * @param  list<int>  $playerIds  restrict the set to these players
@@ -55,7 +55,7 @@ trait SupportsProjectionEndpoints
     }
 
     /**
-     * GET /{sport}/{season}/player-points -- points actually scored, week by week.
+     * GET /{sport}/{season}/player-points: points actually scored, week by week.
      */
     public function playerPoints(
         Sport $sport,

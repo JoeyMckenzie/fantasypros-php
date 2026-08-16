@@ -37,7 +37,7 @@ if ($playerIds === []) {
 }
 
 /**
- * GET /NFL/compare-players -- head-to-head expert ranking comparison.
+ * GET /NFL/compare-players: head-to-head expert ranking comparison.
  *
  * `ComparisonDetails::All` populates both the `players` and `experts` lookups;
  * without it the response carries the rank map alone.
@@ -51,7 +51,7 @@ $comparison = $connector->comparePlayers(
 );
 
 printf(
-    "%s %s comparison -- year %d, week %d, position %s\n",
+    "%s %s comparison for year %d, week %d, position %s\n",
     $comparison->sport->value,
     $comparison->rankingType,
     $comparison->year,
@@ -66,7 +66,7 @@ printf(
 
 // Quarterback ranks come back under STD. The scoring format only changes what a
 // pass-catcher is worth, so FantasyPros leaves the PPR and HALF buckets empty
-// for QB, K and DST -- asking for PPR here would yield no ranks at all.
+// for QB, K and DST. Asking for PPR here would give you no ranks at all.
 $scoring = NflScoringType::Standard;
 
 foreach ($playerIds as $playerId) {

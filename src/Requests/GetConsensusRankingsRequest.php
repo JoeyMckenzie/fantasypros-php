@@ -16,7 +16,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/{season}/consensus-rankings -- the expert consensus for one position.
+ * GET /{sport}/{season}/consensus-rankings: the expert consensus for one position.
  */
 final class GetConsensusRankingsRequest extends Request
 {

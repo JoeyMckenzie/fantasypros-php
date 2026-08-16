@@ -12,14 +12,14 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/{season}/rankings -- rankings across ranking types and positions.
+ * GET /{sport}/{season}/rankings: rankings across ranking types and positions.
  */
 final class GetRankingsRequest extends Request
 {
     /**
-     * The `type` parameter here is not the ranking-type vocabulary the other two
-     * ranking endpoints take -- the spec allows this one value only, so presence
-     * is the signal and the constructor takes a boolean.
+     * The `type` parameter here isn't the ranking-type vocabulary the other
+     * two ranking endpoints take. The spec allows this one value only, so
+     * presence is the signal and the constructor takes a boolean.
      *
      * `NflRankingType` does carry a matching `Drafters` case, but accepting the
      * whole 19-value enum here would let callers send values this route rejects.

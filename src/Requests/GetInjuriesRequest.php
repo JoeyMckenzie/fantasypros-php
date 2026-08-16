@@ -12,7 +12,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/injuries -- injury statuses and, for the NFL, the practice report.
+ * GET /{sport}/injuries: injury statuses and, for the NFL, the practice report.
  */
 final class GetInjuriesRequest extends Request
 {

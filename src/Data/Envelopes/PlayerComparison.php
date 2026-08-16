@@ -16,9 +16,9 @@ use Saloon\Http\Response;
 /**
  * The compare-players envelope.
  *
- * NFL-shaped on purpose: for NFL the rankings nest scoring format over player
- * ID, whereas MLB/NBA/NHL drop the scoring level and key straight by player.
- * A second sport wants its own DTO rather than a nullable middle layer here.
+ * This is NFL-shaped: for NFL the rankings nest scoring format over player ID,
+ * whereas MLB/NBA/NHL drop the scoring level and key straight by player. A
+ * second sport wants its own DTO rather than a nullable middle layer here.
  */
 final readonly class PlayerComparison
 {

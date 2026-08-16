@@ -13,9 +13,9 @@ use FantasyPros\Data\Infrastructure\Payload;
  * `Payload` rather than touching `mixed` itself, so this pins that convention
  * for the DTOs still to come as the remaining endpoints land.
  *
- * The envelope DTOs -- the ones a request hydrates directly, such as
- * `PlayerCollection` and `InjuryReport` -- take a whole `Response` instead and
- * so are not part of this contract.
+ * The envelope DTOs (the ones a request hydrates directly, like
+ * `PlayerCollection` and `InjuryReport`) take a whole `Response` instead, so
+ * they're not part of this contract.
  */
 interface ApiDataContract
 {

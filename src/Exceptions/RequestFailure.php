@@ -10,25 +10,25 @@ use Throwable;
 /**
  * Maps a failed response onto the exception type that fits it.
  *
- * Lives here rather than on the connector so the connector stays the pure
- * Saloon plumbing it was trimmed back to -- auth, timeouts, retry -- with the
- * body reading kept next to the types it produces.
+ * Lives here rather than on the connector so the connector stays pure Saloon
+ * plumbing (auth, timeouts, retry), with the body reading kept next to the
+ * types it produces.
  *
- * The body is read with plain `json_decode` rather than through `Payload`. That
- * is deliberate: `Payload` throws `UnexpectedPayloadException` from this very
- * namespace, so reading through it would point an arrow from `exceptions` back
- * into `data.infrastructure` and complete a cycle Deptrac would reject. The
- * same reasoning put `ApiLimits` in `Data/Api` -- see FANTASY-15.
+ * The body goes through plain `json_decode` rather than `Payload`, because
+ * `Payload` throws `UnexpectedPayloadException` from this namespace. Reading
+ * through it would point an arrow from `exceptions` back into
+ * `data.infrastructure` and close a cycle Deptrac rejects. Same reason
+ * `ApiLimits` sits in `Data/Api`; see FANTASY-15.
  */
 final class RequestFailure
 {
     /**
-     * Only 403 and 429 have been observed from the live API. A wrong key, an
-     * empty key and no key header at all all answer `403 {"message":"Forbidden"}`
-     * -- 401 is never returned, and neither is the 400 the spec documents, since
-     * invalid parameters are silently ignored and answered with a 200. Both are
-     * still mapped, because the spec documents them and a gateway change could
-     * start returning them, but neither is reachable from the API as it stands.
+     * Only 403 and 429 actually show up. A wrong key, an empty key and no key
+     * header at all all answer `403 {"message":"Forbidden"}`. 401 never comes
+     * back, and neither does the 400 the spec documents, since bad parameters
+     * get silently ignored and answered with a 200. Both are still mapped in
+     * case a gateway change starts returning them, but neither is reachable
+     * from the API as it stands.
      */
     public static function toException(Response $response, ?Throwable $previous = null): Throwable
     {
@@ -51,9 +51,9 @@ final class RequestFailure
     }
 
     /**
-     * Null when the API sent no explanation, so `RequestException` composes its
-     * own message from the status and body rather than this inventing a worse
-     * one.
+     * Null when the API sent no explanation, which lets `RequestException`
+     * build its own message from the status and body instead of us inventing a
+     * worse one.
      */
     private static function messageFor(int $status, ?string $apiMessage): ?string
     {

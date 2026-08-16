@@ -69,7 +69,7 @@ abstract class RequestTestCase extends TestCase
     }
 
     /**
-     * getUri() rather than getUrl() -- only the former folds in the query.
+     * getUri() rather than getUrl(), since only the former folds in the query.
      */
     private function uri(Request $request): UriInterface
     {

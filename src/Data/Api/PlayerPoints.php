@@ -15,11 +15,11 @@ use FantasyPros\Enums\NflPosition;
  *
  * - `min=true` strips the name, position and team, leaving the ID and numbers.
  * - A player who did not appear in the requested week range comes back as an
- *   identity block alone -- no `games`, `points`, `average` or `weeks` -- even
- *   though the spec marks all four required. Roughly a third of a recorded
- *   quarterback set is in that state. Those players read as a scoreless line
- *   rather than throwing, since not playing is a real answer and zero is the
- *   truthful count.
+ *   identity block alone, with no `games`, `points`, `average` or `weeks`,
+ *   even though the spec marks all four required. Roughly a third of a
+ *   recorded quarterback set is in that state. Those players read as a
+ *   scoreless line rather than throwing, since not playing is a real answer
+ *   and zero is the truthful count.
  */
 final readonly class PlayerPoints implements ApiDataContract
 {
@@ -27,7 +27,7 @@ final readonly class PlayerPoints implements ApiDataContract
      * @param  array<array-key, float>  $weeks  points scored, keyed by week number
      *                                          in the order the API returned them. Only weeks the player actually
      *                                          played appear, so this is sparser than the requested start-to-end
-     *                                          range -- reach for `inWeek()` rather than indexing blind.
+     *                                          range. Reach for `inWeek()` rather than indexing blind.
      */
     public function __construct(
         public int $id,

@@ -19,7 +19,7 @@ use Saloon\Http\Connector;
 trait SupportsInjuryEndpoints
 {
     /**
-     * GET /{sport}/injuries -- injury statuses and, for the NFL, the practice report.
+     * GET /{sport}/injuries: injury statuses and, for the NFL, the practice report.
      *
      * @param  list<string>  $teamIds  pro team codes, e.g. `SF`
      * @param  list<int>  $playerIds  FantasyPros player IDs

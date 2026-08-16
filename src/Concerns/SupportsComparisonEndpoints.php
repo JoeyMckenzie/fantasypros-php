@@ -22,7 +22,7 @@ use Saloon\Http\Connector;
 trait SupportsComparisonEndpoints
 {
     /**
-     * GET /{sport}/compare-players -- head-to-head expert ranking comparison.
+     * GET /{sport}/compare-players: head-to-head expert ranking comparison.
      *
      * @param  list<int>  $playerIds  FantasyPros player IDs to compare
      * @param  list<int>  $expertIds  restrict the comparison to these experts

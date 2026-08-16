@@ -16,7 +16,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
- * GET /{sport}/compare-players -- head-to-head expert ranking comparison.
+ * GET /{sport}/compare-players: head-to-head expert ranking comparison.
  */
 final class ComparePlayersRequest extends Request
 {

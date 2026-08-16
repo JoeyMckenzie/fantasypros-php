@@ -30,7 +30,7 @@ use Saloon\Http\Connector;
 trait SupportsRankingEndpoints
 {
     /**
-     * GET /{sport}/{season}/rankings -- rankings across ranking types and positions.
+     * GET /{sport}/{season}/rankings: rankings across ranking types and positions.
      *
      * @param  list<int>  $expertIds  restrict the rankings to these experts
      */
@@ -61,7 +61,7 @@ trait SupportsRankingEndpoints
     }
 
     /**
-     * GET /{sport}/{season}/consensus-rankings -- the expert consensus for one position.
+     * GET /{sport}/{season}/consensus-rankings: the expert consensus for one position.
      *
      * @param  list<int>  $expertIds  restrict the consensus to these experts
      */

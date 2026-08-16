@@ -77,8 +77,8 @@ final class FantasyProsConnector extends Connector
     }
 
     /**
-     * Overrides HasTimeout's default. Not #[Override] -- the trait is used by
-     * this class, so there is no inherited method being replaced.
+     * Overrides HasTimeout's default. No #[Override] here: the trait is used
+     * by this class, so there's no inherited method being replaced.
      */
     public function getConnectTimeout(): float
     {
@@ -96,16 +96,16 @@ final class FantasyProsConnector extends Connector
     #[Override]
     public function handleRetry(FatalRequestException|RequestException $exception, Request $request): bool
     {
-        // Never got a response at all -- DNS, TLS, timeout. Worth another go.
+        // Never got a response at all (DNS, TLS, timeout). Worth another go.
         if ($exception instanceof FatalRequestException) {
             return true;
         }
 
         $status = $exception->getResponse()->status();
 
-        // Only rate limiting and server faults are transient. A 403 -- which is
-        // what a rejected key actually answers, not the 401 the spec implies --
-        // fails identically however often we ask.
+        // Only rate limiting and server faults are transient. A 403 is what a
+        // rejected key actually answers (not the 401 the spec implies), and it
+        // fails the same however often we ask.
         return $status === 429 || $status >= 500;
     }
 
