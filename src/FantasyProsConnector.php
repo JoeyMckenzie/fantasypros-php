@@ -12,6 +12,7 @@ use FantasyPros\Concerns\SupportsPlayerEndpoints;
 use FantasyPros\Concerns\SupportsProjectionEndpoints;
 use FantasyPros\Concerns\SupportsRankingEndpoints;
 use FantasyPros\Exceptions\MissingApiKeyException;
+use FantasyPros\Exceptions\RequestFailure;
 use Override;
 use Saloon\Contracts\Authenticator;
 use Saloon\Exceptions\Request\FatalRequestException;
@@ -19,9 +20,11 @@ use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Auth\HeaderAuthenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 use Saloon\Traits\Plugins\AcceptsJson;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 use Saloon\Traits\Plugins\HasTimeout;
+use Throwable;
 
 final class FantasyProsConnector extends Connector
 {
@@ -100,9 +103,24 @@ final class FantasyProsConnector extends Connector
 
         $status = $exception->getResponse()->status();
 
-        // Only rate limiting and server faults are transient. A 401 (bad key)
-        // or 400 (bad parameter) fails identically however often we ask.
+        // Only rate limiting and server faults are transient. A 403 -- which is
+        // what a rejected key actually answers, not the 401 the spec implies --
+        // fails identically however often we ask.
         return $status === 429 || $status >= 500;
+    }
+
+    /**
+     * Map every failed response onto a FantasyPros exception type.
+     *
+     * Consumers call endpoint methods and never see Saloon, so its status
+     * exceptions must not be what surfaces from them. The returned type still
+     * extends Saloon's `RequestException`, which is what keeps `handleRetry`
+     * below able to accept it.
+     */
+    #[Override]
+    public function getRequestException(Response $response, ?Throwable $senderException): Throwable
+    {
+        return RequestFailure::toException($response, $senderException);
     }
 
     #[Override]
