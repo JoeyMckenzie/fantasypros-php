@@ -59,8 +59,5 @@ jobs:
       - name: Install devenv
         run: nix profile install nixpkgs#devenv
 
-      # No API key: composer test replays committed fixtures and
-      # MockConfig::throwOnMissingFixtures() turns a missing one into a hard
-      # failure, so the suite can never quietly reach the live API.
       - name: Test
         run: devenv shell ci-test

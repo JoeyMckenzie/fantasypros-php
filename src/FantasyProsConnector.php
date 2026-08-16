@@ -76,10 +76,6 @@ final class FantasyProsConnector extends Connector
         return self::BASE_URL;
     }
 
-    /**
-     * Overrides HasTimeout's default. No #[Override] here: the trait is used
-     * by this class, so there's no inherited method being replaced.
-     */
     public function getConnectTimeout(): float
     {
         return 10;
@@ -90,33 +86,18 @@ final class FantasyProsConnector extends Connector
         return 30;
     }
 
-    /**
-     * Decide whether a failed attempt is worth repeating.
-     */
     #[Override]
     public function handleRetry(FatalRequestException|RequestException $exception, Request $request): bool
     {
-        // Never got a response at all (DNS, TLS, timeout). Worth another go.
         if ($exception instanceof FatalRequestException) {
             return true;
         }
 
         $status = $exception->getResponse()->status();
 
-        // Only rate limiting and server faults are transient. A 403 is what a
-        // rejected key actually answers (not the 401 the spec implies), and it
-        // fails the same however often we ask.
         return $status === 429 || $status >= 500;
     }
 
-    /**
-     * Map every failed response onto a FantasyPros exception type.
-     *
-     * Consumers call endpoint methods and never see Saloon, so its status
-     * exceptions must not be what surfaces from them. The returned type still
-     * extends Saloon's `RequestException`, which is what keeps `handleRetry`
-     * below able to accept it.
-     */
     #[Override]
     public function getRequestException(Response $response, ?Throwable $senderException): Throwable
     {
