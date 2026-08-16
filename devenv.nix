@@ -43,12 +43,10 @@ in
 {
   packages = [
     pkgs.figlet
+    pkgs.git-cliff
   ];
 
   scripts = {
-    # The two halves of the quality gate, split the way CI runs them. Between
-    # them they cover everything CONTRIBUTING lists, so a green CI run and a
-    # green local run mean the same thing.
     ci-lint.exec = ''
       set -euo pipefail
       composer fmt:check
@@ -57,8 +55,6 @@ in
       composer test:arch
     '';
 
-    # test:mutate needs Xdebug for coverage; it comes from the extension list
-    # below rather than anything CI sets up.
     ci-test.exec = ''
       set -euo pipefail
       composer test
