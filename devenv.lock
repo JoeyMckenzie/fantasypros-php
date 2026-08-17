@@ -17,6 +17,24 @@
         "type": "github"
       }
     },
+    "fantasyphp": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1787007523,
+        "narHash": "sha256-8ZSO7V635rELDOWxfPLlKlzwkvFyVu9P8+qvlWwDHg4=",
+        "owner": "FantasyPHP",
+        "repo": "devenv",
+        "rev": "51f06b4544d5d5e7995740c4eb54ad62898819a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FantasyPHP",
+        "repo": "devenv",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -59,11 +77,11 @@
         "nixpkgs-src": "nixpkgs-src"
       },
       "locked": {
-        "lastModified": 1786472144,
-        "narHash": "sha256-W1wLGKZKGtnTWGRFgjbsVQleuO6jgMweaSAbFltLkN0=",
+        "lastModified": 1787002832,
+        "narHash": "sha256-DGkHh88/7YLVGZ7HzSVN4YmUmR+wGKudIp6H9UsUNT0=",
         "owner": "cachix",
         "repo": "devenv-nixpkgs",
-        "rev": "ea21d30f66a051c7cd750692a2af8d56e0ec4bfb",
+        "rev": "ee3d58d53cfcddfc0ae6fc7f04f4fe2a0c7cf0ed",
         "type": "github"
       },
       "original": {
@@ -74,6 +92,23 @@
       }
     },
     "nixpkgs-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786858016,
+        "narHash": "sha256-Vczr2zxD0orq6N2QQe5uqOGF7TRDcQJRRuAcsdHr4kg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "54ba4bcec4043e72a4006d825e0d7aff5562008f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-src_2": {
       "flake": false,
       "locked": {
         "lastModified": 1786098110,
@@ -90,11 +125,31 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "inputs": {
+        "nixpkgs-src": "nixpkgs-src_2"
+      },
+      "locked": {
+        "lastModified": 1786472144,
+        "narHash": "sha256-W1wLGKZKGtnTWGRFgjbsVQleuO6jgMweaSAbFltLkN0=",
+        "owner": "cachix",
+        "repo": "devenv-nixpkgs",
+        "rev": "ea21d30f66a051c7cd750692a2af8d56e0ec4bfb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "ref": "rolling",
+        "repo": "devenv-nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "devenv": "devenv",
+        "fantasyphp": "fantasyphp",
         "git-hooks": "git-hooks",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },

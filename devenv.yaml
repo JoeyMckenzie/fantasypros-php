@@ -7,3 +7,9 @@ inputs:
         follows: nixpkgs
   nixpkgs:
     url: github:cachix/devenv-nixpkgs/rolling
+  # nixpkgs and git-hooks stay declared here: devenv does not resolve a
+  # module's inputs transitively.
+  fantasyphp:
+    url: github:FantasyPHP/devenv
+imports:
+  - fantasyphp
