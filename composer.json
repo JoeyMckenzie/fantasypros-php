@@ -1,5 +1,5 @@
 {
-  "name": "joeymckenzie/fantasypros-php",
+  "name": "fantasyphp/fantasypros-php",
   "description": "A PHP client for the FantasyPros API: players, rankings, projections, news and injuries.",
   "license": "MIT",
   "keywords": [
