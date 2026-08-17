@@ -14,6 +14,10 @@ opencode.jsonc
 .codex/mcp-oauth-locks
 .pi-subagents/
 
+# Written by the FantasyPHP/devenv module on shell entry
+/pint.json
+/cliff.toml
+
 # Devenv
 .devenv*
 devenv.local.nix
