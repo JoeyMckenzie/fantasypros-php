@@ -10,7 +10,7 @@
     "api-client",
     "saloon"
   ],
-  "homepage": "https://github.com/JoeyMckenzie/fantasypros-php",
+  "homepage": "https://github.com/FantasyPHP/fantasypros",
   "type": "library",
   "authors": [
     {
@@ -39,8 +39,8 @@
   },
   "minimum-stability": "stable",
   "support": {
-    "issues": "https://github.com/JoeyMckenzie/fantasypros-php/issues",
-    "source": "https://github.com/JoeyMckenzie/fantasypros-php"
+    "issues": "https://github.com/FantasyPHP/fantasypros/issues",
+    "source": "https://github.com/FantasyPHP/fantasypros"
   },
   "autoload": {
     "psr-4": {

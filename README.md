@@ -40,7 +40,7 @@ PHP 8.5 or newer.
 ## Installation
 
 ```bash
-composer require joeymckenzie/fantasypros-php
+composer require fantasyphp/fantasypros-php
 ```
 
 ## Getting an API key

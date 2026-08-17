@@ -22,11 +22,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1787006703,
-        "narHash": "sha256-o5CdOjX6RYAcQqvB2QzJ+05WZPQArK1y5RFwtLLFWI0=",
+        "lastModified": 1787007523,
+        "narHash": "sha256-8ZSO7V635rELDOWxfPLlKlzwkvFyVu9P8+qvlWwDHg4=",
         "owner": "FantasyPHP",
         "repo": "devenv",
-        "rev": "15c822a1c48b637d7ff797454c230d06cc538473",
+        "rev": "51f06b4544d5d5e7995740c4eb54ad62898819a9",
         "type": "github"
       },
       "original": {
