@@ -3,9 +3,11 @@ id: FANTASY-18.2
 title: >-
   Extract the shared exception types and test harness into
   fantasyphp/client-core
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@claude'
 created_date: '2026-08-17 22:09'
+updated_date: '2026-08-17 23:13'
 labels:
   - php
   - shared-package

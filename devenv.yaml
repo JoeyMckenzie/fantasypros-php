@@ -1,4 +1,3 @@
-# yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
 inputs:
   git-hooks:
     url: github:cachix/git-hooks.nix
@@ -7,8 +6,6 @@ inputs:
         follows: nixpkgs
   nixpkgs:
     url: github:cachix/devenv-nixpkgs/rolling
-  # nixpkgs and git-hooks stay declared here: devenv does not resolve a
-  # module's inputs transitively.
   fantasyphp:
     url: github:FantasyPHP/devenv
 imports:
