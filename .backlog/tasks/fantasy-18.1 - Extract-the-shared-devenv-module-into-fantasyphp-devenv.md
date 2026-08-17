@@ -5,7 +5,7 @@ status: Done
 assignee:
   - '@claude'
 created_date: '2026-08-17 22:09'
-updated_date: '2026-08-17 22:52'
+updated_date: '2026-08-17 23:02'
 labels:
   - devenv
   - nix
@@ -126,6 +126,14 @@ That masked failure surfaced a genuine pre-existing bug, unrelated to this chang
 `release` verified on PATH in the fantasypros shell and correctly refuses to tag from a non-main branch, so its safety guards survived the port.
 
 FP's CHANGELOG.md header still reads "Managed by `release.sh`". Left alone deliberately: git-cliff regenerates the whole file from the cliff.toml template on the next release, and the template is already updated, so it self-heals rather than needing a hand-edit of a generated file.
+
+Follow-up after review request. The vendor guard is now fixed in the module (FantasyPHP/devenv@51f06b4): `enterShell` tests for vendor/autoload.php rather than the vendor/ directory. Verified by deleting vendor/autoload.php in myfantasyleague while leaving the other 36 entries in place and re-entering the shell — composer reinstalled and restored it, where the old guard skipped. Both clients' devenv.lock were bumped to that revision, since they pin the module by rev and would not otherwise receive it.
+
+Org URLs corrected in both clients: composer.json homepage/issues/source now point at FantasyPHP/fantasypros and FantasyPHP/myfantasyleague. fantasypros' README also had `composer require joeymckenzie/fantasypros-php` while the package is `fantasyphp/fantasypros-php` — the documented install command did not resolve on Packagist. fantasypros' git remote was repointed from JoeyMckenzie/fantasy (working only via GitHub redirect) to the org.
+
+Reusable workflow confirmed in real CI, which was the largest open risk: ci/lint and ci/test both pass on FantasyPHP/fantasypros#2 and FantasyPHP/myfantasyleague#1. Notably it works for the private client too — a private repo can call a reusable workflow from a public one.
+
+New pre-existing issue found and deliberately not fixed: `composer validate` reports composer.lock out of date with composer.json in BOTH clients. Confirmed to predate this work by validating the pre-change composer.json against the same lock and getting the identical error; the edited fields (homepage, support) are not part of Composer's content hash. `composer validate` is not part of ci-lint so nothing is gated on it. `composer update --lock` is the fix when wanted.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
